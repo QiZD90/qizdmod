@@ -14,9 +14,9 @@ import java.util.Iterator;
 public class SimpleMerchantMixin {
     @Inject(at = @At("HEAD"), method = "setOffersFromServer(Lnet/minecraft/village/TradeOfferList;)V")
     private void onSettingOffers(TradeOfferList tradeOfferList, CallbackInfo info) {
-        /*for (Iterator i = tradeOfferList.iterator(); i.hasNext(); ) {
-            TradeOffer offer = (TradeOffer) i.next();
-            System.out.println(offer);
-        }*/
+        for (Iterator<TradeOffer> i = tradeOfferList.iterator(); i.hasNext(); ) {
+            TradeOffer offer = i.next();
+            offer.setSpecialPrice(0);
+        }
     }
 }
