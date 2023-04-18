@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "count=1": {
+      "model": "qizdmod:block/bottle_block"
+    },
+    "count=2": {
+      "model": "qizdmod:block/bottle_block2"
+    },
+    "count=3": {
+      "model": "qizdmod:block/bottle_block3"
+    }
+  }
+}

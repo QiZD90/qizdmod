@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "qizdmod",
+  "version": "${version}",
+  "name": "QiZD's mod",
+  "description": "Just like Garry's mod but QiZD's",
+  "authors": ["QiZD"],
+  "contact": {
+    "repo": "https://github.com/QiZD90/qizdmod"
+  },
+  "license": "MIT",
+  "icon": "assets/qizdmod/logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "ml.qizd.qizdmod.client.QizdmodClient"
+    ],
+    "main": [
+      "ml.qizd.qizdmod.Qizdmod"
+    ]
+  },
+  "mixins": [
+    "qizdmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
