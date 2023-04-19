@@ -4,6 +4,7 @@
   "package": "ml.qizd.qizdmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "FireworkRocketEntityMixin",
     "MerchantEntityMixin",
     "SimpleMerchantMixin"
   ],
