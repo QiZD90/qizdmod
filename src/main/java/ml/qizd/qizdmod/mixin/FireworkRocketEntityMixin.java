@@ -35,6 +35,7 @@ public abstract class FireworkRocketEntityMixin {
         if (list != null && !list.isEmpty())
             return;
 
-        shooter.damage(DamageSource.GENERIC, 5.0f); // TODO: Make damage source into a firework damage
+        FireworkRocketEntity _this = (FireworkRocketEntity)(Object) this;
+        shooter.damage(DamageSource.firework(_this, this.shooter), 5.0f);
     }
 }
