@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Iterator;
 
 @Mixin(SimpleMerchant.class)
-public class SimpleMerchantMixin {
+public abstract class SimpleMerchantMixin {
     @Inject(at = @At("HEAD"), method = "setOffersFromServer(Lnet/minecraft/village/TradeOfferList;)V")
     private void onSettingOffers(TradeOfferList tradeOfferList, CallbackInfo info) {
         for (Iterator<TradeOffer> i = tradeOfferList.iterator(); i.hasNext(); ) {

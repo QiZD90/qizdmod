@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MerchantEntity.class)
-public class MerchantEntityMixin {
+public abstract class MerchantEntityMixin {
     @Inject(at = @At("HEAD"), method = "canBeLeashedBy(Lnet/minecraft/entity/player/PlayerEntity;)Z", cancellable = true)
     public void canBeLeashedByMixin(PlayerEntity player, CallbackInfoReturnable<Boolean> info) {
         info.setReturnValue(true);
