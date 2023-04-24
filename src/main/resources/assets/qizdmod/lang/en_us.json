@@ -1,3 +1,6 @@
 {
-  "block.qizdmod.bottle_block": "Bottle"
+  "block.qizdmod.bottle_block": "Bottle",
+  "enchantment.qizdmod.empty_enchantment": "Removed enchantment",
+  "enchantment.qizdmod.intensive_training": "Intensive training",
+  "enchantment.qizdmod.smelting_pickaxe": "Smelting pickaxe"
 }

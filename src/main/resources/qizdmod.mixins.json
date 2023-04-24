@@ -6,7 +6,9 @@
   "mixins": [
     "FireworkRocketEntityMixin",
     "MerchantEntityMixin",
-    "SimpleMerchantMixin"
+    "SimpleMerchantMixin",
+    "replaceenchantments.EnchantmentHelperMixin",
+    "replaceenchantments.SimpleRegistryMixin"
   ],
   "client": [
   ],

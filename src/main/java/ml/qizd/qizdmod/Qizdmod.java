@@ -1,6 +1,9 @@
 package ml.qizd.qizdmod;
 
 import ml.qizd.qizdmod.blocks.BottleBlock;
+import ml.qizd.qizdmod.enchantment.EmptyEnchantment;
+import ml.qizd.qizdmod.enchantment.IntensiveTrainingEnchantment;
+import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -22,5 +25,19 @@ public class Qizdmod implements ModInitializer {
                 )
         );
 
+        Registry.register(
+                Registry.ENCHANTMENT,
+                new Identifier("qizdmod", "empty_enchantment"),
+                EmptyEnchantment.EMPTY_ENCHANTMENT);
+
+        Registry.register(
+                Registry.ENCHANTMENT,
+                new Identifier("qizdmod", "intensive_training"),
+                IntensiveTrainingEnchantment.INTENSIVE_TRAINING);
+
+        Registry.register(
+                Registry.ENCHANTMENT,
+                new Identifier("qizdmod", "smelting_pickaxe"),
+                SmeltingPickaxeEnchantment.SMELTING_PICKAXE);
     }
 }
