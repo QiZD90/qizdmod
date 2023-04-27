@@ -28,8 +28,8 @@ public abstract class SimpleRegistryMixin<T> {
 
         Enchantment enchantment = (Enchantment) value;
         if (ReplacedEnchantments.isEnchantmentReplaced(enchantment)) {
-            info.setReturnValue(
-                    Registry.ENCHANTMENT.getId(ReplacedEnchantments.getEnchantmentReplacement(enchantment)));
+            Identifier id = Registry.ENCHANTMENT.getId(ReplacedEnchantments.getEnchantmentReplacement(enchantment));
+            info.setReturnValue(id);
         }
     }
 

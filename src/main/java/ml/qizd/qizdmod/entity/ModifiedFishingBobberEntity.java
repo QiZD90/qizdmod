@@ -13,20 +13,19 @@ public class ModifiedFishingBobberEntity extends FishingBobberEntity {
         super(user, world, 0, lureLevel);
         this.lureLevel = lureLevel;
         this.intensiveTrainingLevel = intensiveTrainingLevel;
-        System.out.printf("INIT Lure: %d, IT: %d%n", lureLevel, intensiveTrainingLevel);
     }
 
     @Override
     public int use(ItemStack usedItem) {
-        System.out.printf("Lure: %d, IT: %d%n", lureLevel, intensiveTrainingLevel);
         int result = super.use(usedItem);
         if (result == 1) {
+            int orbsToSpawn = this.random.nextInt(intensiveTrainingLevel) + intensiveTrainingLevel;
             PlayerEntity playerEntity = this.getPlayerOwner();
             playerEntity.world.spawnEntity(
                     new ExperienceOrbEntity(
                             playerEntity.world,
                             playerEntity.getX(), playerEntity.getY() + 0.5, playerEntity.getZ() + 0.5,
-                            this.random.nextInt(intensiveTrainingLevel) + intensiveTrainingLevel));
+                            orbsToSpawn));
         }
 
         return result;
