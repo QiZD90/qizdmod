@@ -8,6 +8,7 @@
     "MerchantEntityMixin",
     "SimpleMerchantMixin",
     "replaceenchantments.EnchantmentHelperMixin",
+    "replaceenchantments.FishingRodItemMixin",
     "replaceenchantments.SimpleRegistryMixin"
   ],
   "client": [
