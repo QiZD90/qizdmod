@@ -7,6 +7,7 @@
     "FireworkRocketEntityMixin",
     "MerchantEntityMixin",
     "SimpleMerchantMixin",
+    "replaceenchantments.BlockMixin",
     "replaceenchantments.EnchantmentHelperMixin",
     "replaceenchantments.FishingRodItemMixin",
     "replaceenchantments.SimpleRegistryMixin"

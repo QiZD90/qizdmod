@@ -5,9 +5,7 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
 public class SmeltingPickaxeEnchantment extends Enchantment {
-    public static final SmeltingPickaxeEnchantment SMELTING_PICKAXE = new SmeltingPickaxeEnchantment();
-
-    public static final Enchantment INTENSIVE_TRAINING = new IntensiveTrainingEnchantment();
+    public static final Enchantment SMELTING_PICKAXE = new SmeltingPickaxeEnchantment();
 
     private static EquipmentSlot[] slots = {EquipmentSlot.MAINHAND};
     protected SmeltingPickaxeEnchantment() {
