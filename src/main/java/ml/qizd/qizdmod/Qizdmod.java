@@ -1,6 +1,7 @@
 package ml.qizd.qizdmod;
 
 import ml.qizd.qizdmod.blocks.BottleBlock;
+import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import ml.qizd.qizdmod.enchantment.EmptyEnchantment;
 import ml.qizd.qizdmod.enchantment.IntensiveTrainingEnchantment;
 import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
@@ -22,6 +23,20 @@ public class Qizdmod implements ModInitializer {
                         new Item.Settings()
                                 .group(ItemGroup.DECORATIONS)
                                 .maxCount(16)
+                )
+        );
+
+        Registry.register(
+                Registry.BLOCK,
+                new Identifier(MOD_ID, "invisible_lamp"),
+                InvisibleLampBlock.INVISIBLE_LAMP_BLOCK);
+        Registry.register(
+                Registry.ITEM,
+                new Identifier(MOD_ID, "invisible_lamp"),
+                new BlockItem(
+                        InvisibleLampBlock.INVISIBLE_LAMP_BLOCK,
+                        new Item.Settings()
+                                .group(ItemGroup.DECORATIONS)
                 )
         );
 
