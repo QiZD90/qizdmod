@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "qizdmod:minecoin_512"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "qizdmod:minecoin_64"
+  }
+}

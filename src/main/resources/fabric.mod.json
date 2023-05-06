@@ -12,6 +12,9 @@
   "icon": "assets/qizdmod/logo.png",
   "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "datagen.DataGenerationEntrypoint"
+    ],
     "client": [
       "ml.qizd.qizdmod.client.QizdmodClient"
     ],

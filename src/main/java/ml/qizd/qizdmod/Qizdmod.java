@@ -6,39 +6,25 @@ import ml.qizd.qizdmod.enchantment.EmptyEnchantment;
 import ml.qizd.qizdmod.enchantment.IntensiveTrainingEnchantment;
 import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class Qizdmod implements ModInitializer {
     public static String MOD_ID = "qizdmod";
+    public static final ItemGroup ITEM_GROUP =
+            FabricItemGroupBuilder.create(new Identifier("qizdmod", "qizdmod_group"))
+                    .icon(() -> new ItemStack(InvisibleLampBlock.INVISIBLE_LAMP_BLOCK))
+                    .build();
     @Override
     public void onInitialize() {
-        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "bottle_block"), BottleBlock.BOTTLE_BLOCK);
-        Registry.register(
-                Registry.ITEM, new Identifier(MOD_ID, "bottle_block"),
-                new BlockItem(BottleBlock.BOTTLE_BLOCK,
-                        new Item.Settings()
-                                .group(ItemGroup.DECORATIONS)
-                                .maxCount(16)
-                )
-        );
+        BlocksRegistrar.register();
+        ItemRegistrar.register();
 
-        Registry.register(
-                Registry.BLOCK,
-                new Identifier(MOD_ID, "invisible_lamp"),
-                InvisibleLampBlock.INVISIBLE_LAMP_BLOCK);
-        Registry.register(
-                Registry.ITEM,
-                new Identifier(MOD_ID, "invisible_lamp"),
-                new BlockItem(
-                        InvisibleLampBlock.INVISIBLE_LAMP_BLOCK,
-                        new Item.Settings()
-                                .group(ItemGroup.DECORATIONS)
-                )
-        );
 
         Registry.register(
                 Registry.ENCHANTMENT,
