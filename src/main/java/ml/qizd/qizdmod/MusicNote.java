@@ -17,8 +17,12 @@ public class MusicNote {
             'B', 11
     );
 
-    private MusicNote(int noteNumber) {
+    public MusicNote(int noteNumber) {
         this.noteNumber = noteNumber;
+    }
+
+    public int getNote() {
+        return noteNumber;
     }
 
     public static MusicNote of(String string) {

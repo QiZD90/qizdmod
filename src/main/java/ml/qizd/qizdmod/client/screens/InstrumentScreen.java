@@ -2,10 +2,18 @@ package ml.qizd.qizdmod.client.screens;
 
 import ml.qizd.qizdmod.MusicNote;
 import ml.qizd.qizdmod.Qizdmod;
+import ml.qizd.qizdmod.items.LyreItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -41,29 +49,13 @@ public class InstrumentScreen extends Screen {
     }
 
     public void playNote(MusicNote note) {
-        if (note.lower(MusicNote.C5)) {
-            world.playSound(
-                    user.getX(),
-                    user.getY(),
-                    user.getZ(),
-                    Qizdmod.HARP_NOTE_C4,
-                    SoundCategory.MUSIC,
-                    1f,
-                    MusicNote.ratio(note, MusicNote.C4),
-                    true
-            );
-        } else {
-            world.playSound(
-                    user.getX(),
-                    user.getY(),
-                    user.getZ(),
-                    Qizdmod.HARP_NOTE_C5,
-                    SoundCategory.MUSIC,
-                    1f,
-                    MusicNote.ratio(note, MusicNote.C5),
-                    true
-            );
-        }
+        LyreItem.playNote(note, world, user.getBlockPos());
+
+        PacketByteBuf buf = PacketByteBufs.create();
+        buf.writeBlockPos(user.getBlockPos());
+        buf.writeInt(note.getNote());
+        buf.writeUuid(user.getUuid());
+        ClientPlayNetworking.send(Qizdmod.PLAYED_LYRE_NOTE, buf);
     }
 
     @Override
