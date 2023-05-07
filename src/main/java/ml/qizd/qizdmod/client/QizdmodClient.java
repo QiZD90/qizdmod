@@ -30,11 +30,10 @@ public class QizdmodClient implements ClientModInitializer {
             MusicNote note = new MusicNote(buf.readInt());
             UUID uuid = buf.readUuid();
 
-            System.out.println(client.player.getUuid());
-            System.out.println(uuid);
-
-            if (!client.player.getUuid().equals(uuid))
-                LyreItem.playNote(note, client.world, pos);
+            client.execute(() -> {
+                if (!client.player.getUuid().equals(uuid))
+                    LyreItem.playNote(note, client.world, pos);
+            });
         });
     }
 }
