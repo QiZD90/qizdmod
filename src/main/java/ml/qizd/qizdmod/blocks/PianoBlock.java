@@ -57,6 +57,7 @@ public class PianoBlock extends HorizontalFacingBlock {
     public PianoBlock() {
         super(FabricBlockSettings
                 .of(Material.WOOD)
+                .nonOpaque()
         );
     }
 

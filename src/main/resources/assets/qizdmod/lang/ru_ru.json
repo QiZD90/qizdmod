@@ -1,7 +1,9 @@
 {
   "block.qizdmod.bottle_block": "Бутылка",
   "block.qizdmod.invisible_lamp": "Невидимая лампа",
-  "block.qizdmod.lyre": "Лира",
+  "block.qizdmod.piano": "Фортепиано",
+  "item.qizdmod.lyre": "Лира",
+  "item.qizdmod.lute": "Лютня",
   "item.qizdmod.minecoin_1": "Бронзовая монета (1 Октарий)",
   "item.qizdmod.minecoin_8": "Железная монета (8 Октариев)",
   "item.qizdmod.minecoin_64": "Золотая монета (64 Октария)",
