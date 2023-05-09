@@ -2,6 +2,7 @@ package ml.qizd.qizdmod;
 
 import ml.qizd.qizdmod.blocks.BottleBlock;
 import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
+import ml.qizd.qizdmod.items.LuteItem;
 import ml.qizd.qizdmod.items.LyreItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -42,6 +43,16 @@ public class ItemRegistrar {
                 Registry.ITEM,
                 new Identifier("qizdmod", "lyre"),
                 new LyreItem(
+                        new Item.Settings()
+                                .group(Qizdmod.ITEM_GROUP)
+                                .maxCount(1)
+                )
+        );
+
+        Registry.register(
+                Registry.ITEM,
+                new Identifier("qizdmod", "lute"),
+                new LuteItem(
                         new Item.Settings()
                                 .group(Qizdmod.ITEM_GROUP)
                                 .maxCount(1)

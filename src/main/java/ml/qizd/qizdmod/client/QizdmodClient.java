@@ -1,38 +1,31 @@
 package ml.qizd.qizdmod.client;
 
-import ml.qizd.qizdmod.MusicNote;
+import ml.qizd.qizdmod.Instruments;
 import ml.qizd.qizdmod.Qizdmod;
 import ml.qizd.qizdmod.blocks.BottleBlock;
-import ml.qizd.qizdmod.client.screens.InstrumentScreen;
-import ml.qizd.qizdmod.items.LyreItem;
+import ml.qizd.qizdmod.client.screens.LutePlayingScreen;
+import ml.qizd.qizdmod.client.screens.LyrePlayingScreen;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.loader.impl.util.log.Log;
+import net.fabricmc.loader.impl.util.log.LogCategory;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.util.math.BlockPos;
-
-import java.util.UUID;
 
 public class QizdmodClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(BottleBlock.BOTTLE_BLOCK, RenderLayer.getTranslucent());
 
-        ClientPlayNetworking.registerGlobalReceiver(Qizdmod.STARTED_PLAYING_LYRE, (client, handler, buf, responseSender) -> {
-            client.execute(() -> {
-                client.setScreen(new InstrumentScreen(client.world, client.player));
-            });
-        });
-
-        ClientPlayNetworking.registerGlobalReceiver(Qizdmod.PLAYED_LYRE_NOTE, (client, handler, buf, responseSender) -> {
-            BlockPos pos = buf.readBlockPos();
-            MusicNote note = new MusicNote(buf.readInt());
-            UUID uuid = buf.readUuid();
+        ClientPlayNetworking.registerGlobalReceiver(Qizdmod.STARTED_PLAYING, (client, handler, buf, responseSender) -> {
+            Instruments.Type type = buf.readEnumConstant(Instruments.Type.class);
 
             client.execute(() -> {
-                if (!client.player.getUuid().equals(uuid))
-                    LyreItem.playNote(note, client.world, pos);
+                switch (type) {
+                    case Lyre -> client.setScreen(new LyrePlayingScreen(client.world, client.player));
+                    case Lute -> client.setScreen(new LutePlayingScreen(client.world, client.player));
+                    default -> Log.error(LogCategory.LOG, "Unknown instrument type");
+                }
             });
         });
     }

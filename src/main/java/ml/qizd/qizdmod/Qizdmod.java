@@ -35,9 +35,11 @@ public class Qizdmod implements ModInitializer {
 
     public static SoundEvent HARP_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "harp_c4"));
     public static SoundEvent HARP_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "harp_c5"));
+    public static SoundEvent LUTE_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "lute_c4"));
+    public static SoundEvent LUTE_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "lute_c5"));
 
-    public static final Identifier STARTED_PLAYING_LYRE = new Identifier("qizdmod", "started_playing_lyre");
-    public static final Identifier PLAYED_LYRE_NOTE = new Identifier("qizdmod", "played_lyre_note");
+    public static final Identifier STARTED_PLAYING = new Identifier("qizdmod", "started_playing_instrument");
+    public static final Identifier PLAYED_NOTE = new Identifier("qizdmod", "played_note");
 
 
     @Override
@@ -61,19 +63,11 @@ public class Qizdmod implements ModInitializer {
                 new Identifier("qizdmod", "smelting_pickaxe"),
                 SmeltingPickaxeEnchantment.SMELTING_PICKAXE);
 
-        ServerPlayNetworking.registerGlobalReceiver(Qizdmod.PLAYED_LYRE_NOTE, (server, player, handler, buf, responseSender) -> {
-            BlockPos pos = buf.readBlockPos();
+        ServerPlayNetworking.registerGlobalReceiver(Qizdmod.PLAYED_NOTE, (server, player, handler, buf, responseSender) -> {
+            Instruments.Type type = buf.readEnumConstant(Instruments.Type.class);
             MusicNote note = new MusicNote(buf.readInt());
-            UUID uuid = buf.readUuid();
 
-            PacketByteBuf buf2 = PacketByteBufs.create();
-            buf2.writeBlockPos(pos);
-            buf2.writeInt(note.getNote());
-            buf2.writeUuid(uuid);
-
-            for (ServerPlayerEntity serverPlayer : PlayerLookup.world((ServerWorld) player.world)) {
-                ServerPlayNetworking.send(serverPlayer, Qizdmod.PLAYED_LYRE_NOTE, buf2);
-            }
+            Instruments.playNote(player.world, player, type, note);
         });
     }
 }

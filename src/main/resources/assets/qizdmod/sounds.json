@@ -8,5 +8,15 @@
     "sounds": [
       "qizdmod:harp_c5"
     ]
+  },
+  "lute_c4": {
+    "sounds": [
+      "qizdmod:lute_c4"
+    ]
+  },
+  "lute_c5": {
+    "sounds": [
+      "qizdmod:lute_c5"
+    ]
   }
 }

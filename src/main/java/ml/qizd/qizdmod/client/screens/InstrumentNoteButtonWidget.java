@@ -12,13 +12,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
 public class InstrumentNoteButtonWidget extends ClickableWidget {
-    private static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
+    protected static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
     public static interface OnClickCallback {
         public void onClick();
     }
 
     private OnClickCallback callback;
-    private Text label;
+    protected Text label;
     public static int MAX_COUNTDOWN_TICKS = 20;
     public int pressedCountdownTicks = 0;
     public InstrumentNoteButtonWidget(int x, int y, int width, int height, String label, OnClickCallback callback) {
@@ -47,6 +47,10 @@ public class InstrumentNoteButtonWidget extends ClickableWidget {
         } else {
             return false;
         }
+    }
+
+    public void click() {
+        this.pressedCountdownTicks = MAX_COUNTDOWN_TICKS;
     }
 
     @Override

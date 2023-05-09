@@ -1,27 +1,21 @@
 package ml.qizd.qizdmod.client.screens;
 
+import ml.qizd.qizdmod.Instruments;
 import ml.qizd.qizdmod.MusicNote;
 import ml.qizd.qizdmod.Qizdmod;
-import ml.qizd.qizdmod.items.LyreItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
-import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
-public class InstrumentScreen extends Screen {
+public class LyrePlayingScreen extends Screen {
     World world;
     PlayerEntity user;
     private InstrumentNoteButtonWidget[] buttons;
@@ -42,20 +36,19 @@ public class InstrumentScreen extends Screen {
             {"Z", "X", "C", "V", "B", "N", "M"}
     };
 
-    public InstrumentScreen(World world, PlayerEntity user) {
+    public LyrePlayingScreen(World world, PlayerEntity user) {
         super(Text.of("Instrument screen"));
         this.world = world;
         this.user = user;
     }
 
     public void playNote(MusicNote note) {
-        LyreItem.playNote(note, world, user.getBlockPos());
+        Instruments.playLyreNote(world, user, note);
 
         PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeBlockPos(user.getBlockPos());
+        buf.writeEnumConstant(Instruments.Type.Lyre);
         buf.writeInt(note.getNote());
-        buf.writeUuid(user.getUuid());
-        ClientPlayNetworking.send(Qizdmod.PLAYED_LYRE_NOTE, buf);
+        ClientPlayNetworking.send(Qizdmod.PLAYED_NOTE, buf);
     }
 
     @Override
@@ -93,7 +86,7 @@ public class InstrumentScreen extends Screen {
             for (int column = 0; column < 7; column++) {
                 if (keyboard_layout[row][column] == keyCode) {
                     note = notes[row][column];
-                    buttons[row * 7 + column].pressedCountdownTicks = InstrumentNoteButtonWidget.MAX_COUNTDOWN_TICKS;
+                    buttons[row * 7 + column].click();
                 }
             }
         }
