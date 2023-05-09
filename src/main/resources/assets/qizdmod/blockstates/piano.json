@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "facing=north,part=left": {
+      "model": "qizdmod:block/piano_left", "y": 0
+    },
+    "facing=east,part=left": {
+      "model": "qizdmod:block/piano_left", "y": 90
+    },
+    "facing=south,part=left": {
+      "model": "qizdmod:block/piano_left", "y": 180
+    },
+    "facing=west,part=left": {
+      "model": "qizdmod:block/piano_left", "y": 270
+    },
+
+    "facing=north,part=right": {
+      "model": "qizdmod:block/piano_right", "y": 0
+    },
+    "facing=east,part=right": {
+      "model": "qizdmod:block/piano_right", "y": 90
+    },
+    "facing=south,part=right": {
+      "model": "qizdmod:block/piano_right", "y": 180
+    },
+    "facing=west,part=right": {
+      "model": "qizdmod:block/piano_right", "y": 270
+    }
+  }
+}

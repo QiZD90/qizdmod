@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.client.screens;
+package ml.qizd.qizdmod.client.screens.widgets;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;

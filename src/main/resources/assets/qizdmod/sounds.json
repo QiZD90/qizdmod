@@ -18,5 +18,10 @@
     "sounds": [
       "qizdmod:lute_c5"
     ]
+  },
+  "piano_c4": {
+    "sounds": [
+      "qizdmod:piano_c4"
+    ]
   }
 }

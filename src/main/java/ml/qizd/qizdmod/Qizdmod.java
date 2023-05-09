@@ -37,6 +37,7 @@ public class Qizdmod implements ModInitializer {
     public static SoundEvent HARP_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "harp_c5"));
     public static SoundEvent LUTE_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "lute_c4"));
     public static SoundEvent LUTE_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "lute_c5"));
+    public static SoundEvent PIANO_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "piano_c4"));
 
     public static final Identifier STARTED_PLAYING = new Identifier("qizdmod", "started_playing_instrument");
     public static final Identifier PLAYED_NOTE = new Identifier("qizdmod", "played_note");

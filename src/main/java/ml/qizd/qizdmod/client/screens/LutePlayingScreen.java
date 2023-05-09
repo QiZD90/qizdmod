@@ -3,21 +3,23 @@ package ml.qizd.qizdmod.client.screens;
 import ml.qizd.qizdmod.Instruments;
 import ml.qizd.qizdmod.MusicNote;
 import ml.qizd.qizdmod.Qizdmod;
+import ml.qizd.qizdmod.client.screens.widgets.InstrumentNoteButtonWidget;
+import ml.qizd.qizdmod.client.screens.widgets.ShiftModifiedInstrumentNoteButtonWidget;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.text.Text;
-import net.minecraft.world.World;
 import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class LutePlayingScreen extends Screen {
-    World world;
-    PlayerEntity user;
+    ClientWorld world;
+    ClientPlayerEntity user;
     private InstrumentNoteButtonWidget[] buttons;
     private final int[][] keyboard_layout = {
             {GLFW.GLFW_KEY_Q, GLFW.GLFW_KEY_W, GLFW.GLFW_KEY_E, GLFW.GLFW_KEY_R, GLFW.GLFW_KEY_T, GLFW.GLFW_KEY_Y, GLFW.GLFW_KEY_U},
@@ -42,7 +44,7 @@ public class LutePlayingScreen extends Screen {
             {"Z", "X", "C", "V", "B", "N", "M"}
     };
 
-    public LutePlayingScreen(World world, PlayerEntity user) {
+    public LutePlayingScreen(ClientWorld world, ClientPlayerEntity user) {
         super(Text.of("Instrument screen"));
         this.world = world;
         this.user = user;
