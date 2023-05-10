@@ -58,7 +58,10 @@ public class PianoBlock extends HorizontalFacingBlock {
         super(FabricBlockSettings
                 .of(Material.WOOD)
                 .nonOpaque()
+                .hardness(1f)
         );
+
+        setDefaultState(getDefaultState().with(PART, Part.LEFT));
     }
 
     public static final PianoBlock PIANO_BLOCK = new PianoBlock();
@@ -77,29 +80,21 @@ public class PianoBlock extends HorizontalFacingBlock {
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if (direction == getDirectionTowardsOtherPart(state.get(PART), state.get(FACING))) {
-            if (neighborState.isOf(this) && neighborState.get(PART) != state.get(PART)) {
-                return state;
-            }
-            return Blocks.AIR.getDefaultState();
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        super.onBreak(world, pos, state, player);
+        if (world.isClient) {
+            return;
         }
 
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-    }
-
-    @Override
-    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        BlockPos blockPos;
-        BlockState blockState;
-        Part part;
-        if (!world.isClient && player.isCreative()
+        BlockPos secondPartPos = pos.offset(getDirectionTowardsOtherPart(state.get(PART), state.get(FACING)));
+        world.setBlockState(secondPartPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL | Block.SKIP_DROPS);
+        //world.syncWorldEvent(player, WorldEvents.BLOCK_BROKEN, secondPartPos, Block.getRawIdFromState(blockState));
+        /*if (!world.isClient && player.isCreative()
                 && (part = state.get(PART)) == Part.LEFT
                 && (blockState = world.getBlockState(blockPos = pos.offset(getDirectionTowardsOtherPart(part, state.get(FACING))))).isOf(this) && blockState.get(PART) == Part.RIGHT) {
             world.setBlockState(blockPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL | Block.SKIP_DROPS);
             world.syncWorldEvent(player, WorldEvents.BLOCK_BROKEN, blockPos, Block.getRawIdFromState(blockState));
-        }
-        super.onBreak(world, pos, state, player);
+        }*/
     }
 
     @Override
@@ -117,7 +112,7 @@ public class PianoBlock extends HorizontalFacingBlock {
 
     @Override
     public PistonBehavior getPistonBehavior(BlockState state) {
-        return PistonBehavior.DESTROY;
+        return PistonBehavior.BLOCK;
     }
 
     @Override
