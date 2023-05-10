@@ -48,6 +48,11 @@ public class Qizdmod implements ModInitializer {
         BlocksRegistrar.register();
         ItemRegistrar.register();
 
+        Registry.register(Registry.SOUND_EVENT, HARP_NOTE_C4.getId(), HARP_NOTE_C4);
+        Registry.register(Registry.SOUND_EVENT, HARP_NOTE_C5.getId(), HARP_NOTE_C5);
+        Registry.register(Registry.SOUND_EVENT, LUTE_NOTE_C4.getId(), LUTE_NOTE_C4);
+        Registry.register(Registry.SOUND_EVENT, LUTE_NOTE_C5.getId(), LUTE_NOTE_C5);
+        Registry.register(Registry.SOUND_EVENT, PIANO_NOTE_C4.getId(), PIANO_NOTE_C4);
 
         Registry.register(
                 Registry.ENCHANTMENT,
