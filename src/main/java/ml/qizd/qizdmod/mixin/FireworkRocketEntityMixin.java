@@ -1,22 +1,21 @@
 package ml.qizd.qizdmod.mixin;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.ProjectileDamageSource;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
-import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(FireworkRocketEntity.class)
 public abstract class FireworkRocketEntityMixin {
@@ -36,6 +35,19 @@ public abstract class FireworkRocketEntityMixin {
             return;
 
         FireworkRocketEntity _this = (FireworkRocketEntity)(Object) this;
-        shooter.damage(DamageSource.firework(_this, this.shooter), 5.0f);
+        shooter.damage(fireworkBypassArmor(_this, this.shooter), 5.0f);
+    }
+
+    private static DamageSource fireworkBypassArmor(FireworkRocketEntity firework, @Nullable Entity attacker) {
+        return new ProjectileDamageSource("fireworks", firework, attacker)
+                .setExplosive()
+                .setBypassesArmor()
+                .setBypassesProtection();
+    }
+
+    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"), method = "explode")
+    public boolean damage(LivingEntity instance, DamageSource source, float amount) {
+        instance.damage(source.setBypassesArmor().setBypassesProtection(), amount);
+        return false;
     }
 }
