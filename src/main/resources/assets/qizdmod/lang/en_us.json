@@ -11,5 +11,7 @@
   "item.qizdmod.minecoin_4096": "Diamond Coin (4096 Octarii)",
   "enchantment.qizdmod.empty_enchantment": "Removed Enchantment",
   "enchantment.qizdmod.intensive_training": "Intensive Training",
-  "enchantment.qizdmod.smelting_pickaxe": "Smelting Pickaxe"
+  "enchantment.qizdmod.smelting_pickaxe": "Smelting Pickaxe",
+  "text.qizdmod.ender_dragon_vulnerable": "Ender dragon became vulnerable",
+  "text.qizdmod.ender_dragon_invulnerable_again": "Ender dragon became invulnerable again"
 }
