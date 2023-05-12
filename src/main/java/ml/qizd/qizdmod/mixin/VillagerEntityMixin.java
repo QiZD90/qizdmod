@@ -40,10 +40,10 @@ public abstract class VillagerEntityMixin extends MerchantEntity {
     public void fillRecipes() {
         VillagerData villagerData = this.getVillagerData();
         Int2ObjectMap<TradeOffers.Factory[]> int2ObjectMap = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(villagerData.getProfession());
-        if (int2ObjectMap == null || int2ObjectMap.isEmpty()) {
-            return;
-        }
-        TradeOffers.Factory[] vanillaFactories = int2ObjectMap.get(villagerData.getLevel());
+        TradeOffers.Factory[] vanillaFactories =
+                int2ObjectMap == null
+                        ? null
+                        : int2ObjectMap.get(villagerData.getLevel());
         ArrayList<TradeOffers.Factory> factories =
                 vanillaFactories == null
                         ? new ArrayList<>()
