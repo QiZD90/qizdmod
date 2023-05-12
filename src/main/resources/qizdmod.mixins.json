@@ -10,7 +10,8 @@
     "replaceenchantments.BlockMixin",
     "replaceenchantments.EnchantmentHelperMixin",
     "replaceenchantments.FishingRodItemMixin",
-    "replaceenchantments.SimpleRegistryMixin"
+    "replaceenchantments.SimpleRegistryMixin",
+    "VillagerEntityMixin"
   ],
   "client": [
   ],

@@ -1,5 +1,6 @@
 package ml.qizd.qizdmod.mixin;
 
+import ml.qizd.qizdmod.CustomTrades;
 import net.minecraft.village.SimpleMerchant;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;

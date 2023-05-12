@@ -97,6 +97,7 @@ public class PianoBlock extends HorizontalFacingBlock {
         }*/
     }
 
+    // TODO: this has a bug when trying to place in spawn protection zone but vanilla beds are bugged too...
     @Override
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
