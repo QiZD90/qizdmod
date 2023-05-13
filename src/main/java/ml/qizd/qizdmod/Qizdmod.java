@@ -48,6 +48,7 @@ public class Qizdmod implements ModInitializer {
     public void onInitialize() {
         BlocksRegistrar.register();
         ItemRegistrar.register();
+        VillagerRegistrar.register();
 
         Registry.register(Registry.SOUND_EVENT, HARP_NOTE_C4.getId(), HARP_NOTE_C4);
         Registry.register(Registry.SOUND_EVENT, HARP_NOTE_C5.getId(), HARP_NOTE_C5);
