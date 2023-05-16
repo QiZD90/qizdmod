@@ -15,7 +15,7 @@ public class FoxEntityRendererMixin {
             = new Identifier("qizdmod", "textures/entity/fox/luka.png");
 
     private static final Identifier SLEEPING_LUKA_TEXTURE
-            = new Identifier("qizdmod", "textures/entity/fox/luka.png");
+            = new Identifier("qizdmod", "textures/entity/fox/luka_sleep.png");
 
     private boolean isLuka(String string) {
         return string.equals("Luka") || string.equals("Лука");
