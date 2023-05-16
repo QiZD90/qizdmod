@@ -12,14 +12,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(FoxEntityRenderer.class)
 public class FoxEntityRendererMixin {
     private static final Identifier LUKA_TEXTURE
-            = new Identifier("qizdmod", "textures/entity/fox/blue_fox.png");
+            = new Identifier("qizdmod", "textures/entity/fox/luka.png");
 
     private static final Identifier SLEEPING_LUKA_TEXTURE
-            = new Identifier("qizdmod", "textures/entity/fox/blue_fox.png");
+            = new Identifier("qizdmod", "textures/entity/fox/luka.png");
+
+    private boolean isLuka(String string) {
+        return string.equals("Luka") || string.equals("Лука");
+    }
 
     @Inject(at = @At("HEAD"), method = "getTexture(Lnet/minecraft/entity/passive/FoxEntity;)Lnet/minecraft/util/Identifier;", cancellable = true)
     public void getTexture(FoxEntity foxEntity, CallbackInfoReturnable<Identifier> info) {
-        if (foxEntity.hasCustomName() && foxEntity.getCustomName().getString().equals("Luka")) {
+        if (foxEntity.hasCustomName() && isLuka(foxEntity.getCustomName().getString())) {
             info.setReturnValue(foxEntity.isSleeping() ? SLEEPING_LUKA_TEXTURE : LUKA_TEXTURE);
         }
     }
