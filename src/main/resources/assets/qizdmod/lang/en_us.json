@@ -9,5 +9,6 @@
   "item.qizdmod.minecoin_4096": "Diamond Coin (4096 Octarii)",
   "enchantment.qizdmod.empty_enchantment": "Removed Enchantment",
   "enchantment.qizdmod.intensive_training": "Intensive Training",
-  "enchantment.qizdmod.smelting_pickaxe": "Smelting Pickaxe"
+  "enchantment.qizdmod.smelting_pickaxe": "Smelting Pickaxe",
+  "death.attack.firework_elytra": "%1$s played with fireworks"
 }

@@ -1,5 +1,6 @@
 package ml.qizd.qizdmod.mixin;
 
+import ml.qizd.qizdmod.FireworkElytraDamageSource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -28,26 +29,6 @@ public abstract class FireworkRocketEntityMixin {
         if (shooter == null)
             return;
 
-        ItemStack stack = this.getStack();
-        NbtCompound nbtCompound = stack.isEmpty() ? null : stack.getSubNbt("Fireworks");
-        NbtList list =  nbtCompound != null ? nbtCompound.getList("Explosions", NbtElement.COMPOUND_TYPE) : null;
-        if (list != null && !list.isEmpty())
-            return;
-
-        FireworkRocketEntity _this = (FireworkRocketEntity)(Object) this;
-        shooter.damage(fireworkBypassArmor(_this, this.shooter), 5.0f);
-    }
-
-    private static DamageSource fireworkBypassArmor(FireworkRocketEntity firework, @Nullable Entity attacker) {
-        return new ProjectileDamageSource("fireworks", firework, attacker)
-                .setExplosive()
-                .setBypassesArmor()
-                .setBypassesProtection();
-    }
-
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"), method = "explode")
-    public boolean damage(LivingEntity instance, DamageSource source, float amount) {
-        instance.damage(source.setBypassesArmor().setBypassesProtection(), amount);
-        return false;
+        shooter.damage(new FireworkElytraDamageSource(), 9999f);
     }
 }

@@ -8,5 +8,6 @@
   "item.qizdmod.minecoin_4096": "Алмазная монета (4096 Октариев)",
   "enchantment.qizdmod.empty_enchantment": "Удалённое зачарование",
   "enchantment.qizdmod.intensive_training": "Интенсивная тренировка",
-  "enchantment.qizdmod.smelting_pickaxe": "Пылающая кирка"
+  "enchantment.qizdmod.smelting_pickaxe": "Пылающая кирка",
+  "death.attack.firework_elytra": "%1$s доигрался с пиротехникой"
 }
