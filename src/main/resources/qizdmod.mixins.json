@@ -15,6 +15,7 @@
     "replaceenchantments.SimpleRegistryMixin"
   ],
   "client": [
+    "FoxEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
