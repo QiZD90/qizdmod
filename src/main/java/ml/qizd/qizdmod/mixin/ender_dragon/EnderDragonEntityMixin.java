@@ -60,6 +60,11 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
         this.dataTracker.set(TICKS_UNTIL_INVULNERABILITY, ticks);
     }
 
+    @Inject(at = @At("TAIL"), method = "initDataTracker")
+    public void initDataTracker(CallbackInfo ci) {
+        this.getDataTracker().startTracking(TICKS_UNTIL_INVULNERABILITY, -1);
+    }
+
 
     @Inject(at = @At("HEAD"), method = "createEnderDragonAttributes", cancellable = true)
     private static void createEnderDragonAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> info) {
