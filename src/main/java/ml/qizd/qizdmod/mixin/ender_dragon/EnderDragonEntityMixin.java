@@ -10,8 +10,10 @@ import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonFight;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Style;
@@ -44,10 +46,18 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
     private static final float HEAL_FROM_CRYSTALS = 0.5f;
     private static final int TICKS_OF_VULNERABILITY = 20 * 60;
 
-    private int ticksUntilInvulnerability = -1;
+    private static TrackedData<Integer> TICKS_UNTIL_INVULNERABILITY;
 
     protected EnderDragonEntityMixin(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    public int getTicksUntilInvulnerability() {
+        return this.dataTracker.get(TICKS_UNTIL_INVULNERABILITY);
+    }
+
+    public void setTicksUntilInvulnerability(int ticks) {
+        this.dataTracker.set(TICKS_UNTIL_INVULNERABILITY, ticks);
     }
 
 
@@ -57,12 +67,22 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
                 MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, DRAGON_MAX_HP));
     }
 
+    @Inject(at= @At("TAIL"), method = "readCustomDataFromNbt")
+    public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
+        nbt.putInt("TicksUntilInulnerability", getTicksUntilInvulnerability());
+    }
+
+    @Inject(at= @At("TAIL"), method = "writeCustomDataToNbt")
+    public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
+        this.setTicksUntilInvulnerability(nbt.getInt("TicksUntilInvulnerability"));
+    }
+
     @Inject(at = @At("HEAD"), method = "tickMovement")
     private void tickMovement(CallbackInfo info) {
-        if (this.ticksUntilInvulnerability > 0) {
-            --this.ticksUntilInvulnerability;
-            if (this.ticksUntilInvulnerability == 0) {
-                this.ticksUntilInvulnerability = -1;
+        if (this.getTicksUntilInvulnerability() > 0) {
+            this.setTicksUntilInvulnerability(this.getTicksUntilInvulnerability() - 1);
+            if (this.getTicksUntilInvulnerability() == 0) {
+                this.setTicksUntilInvulnerability(-1);
                 tryToBroadcast("text.qizdmod.ender_dragon_invulnerable_again");
                 this.tryToRespawnCrystals();
             }
@@ -86,7 +106,7 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
         //System.out.printf("Crystal destroyed on server; Alive crystals: %d\n", fight.getAliveEndCrystals());
 
         if (fight.getAliveEndCrystals() == 0) {
-            this.ticksUntilInvulnerability = TICKS_OF_VULNERABILITY;
+            setTicksUntilInvulnerability(TICKS_OF_VULNERABILITY);
             System.out.println(fight);
             tryToBroadcast("text.qizdmod.ender_dragon_vulnerable");
         }
@@ -98,7 +118,7 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
 
         //System.out.printf("isInvulnerableTo fucn; ticks: %d\n", ticksUntilInvulnerability);
 
-        if (this.ticksUntilInvulnerability == -1)
+        if (this.getTicksUntilInvulnerability() == -1)
             return true;
 
         return super.isInvulnerableTo(source);
