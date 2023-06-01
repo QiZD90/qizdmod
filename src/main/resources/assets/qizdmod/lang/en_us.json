@@ -13,5 +13,6 @@
   "enchantment.qizdmod.intensive_training": "Intensive Training",
   "enchantment.qizdmod.smelting_pickaxe": "Smelting Pickaxe",
   "text.qizdmod.ender_dragon_vulnerable": "Ender dragon became vulnerable",
-  "text.qizdmod.ender_dragon_invulnerable_again": "Ender dragon became invulnerable again"
+  "text.qizdmod.ender_dragon_invulnerable_again": "Ender dragon became invulnerable again",
+  "death.attack.firework_elytra": "%1$s played with fireworks"
 }

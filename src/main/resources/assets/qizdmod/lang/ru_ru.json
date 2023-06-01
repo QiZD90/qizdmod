@@ -12,5 +12,6 @@
   "enchantment.qizdmod.intensive_training": "Интенсивная тренировка",
   "enchantment.qizdmod.smelting_pickaxe": "Пылающая кирка",
   "text.qizdmod.ender_dragon_vulnerable": "Эндер-дракон временно стал уязвимым",
-  "text.qizdmod.ender_dragon_invulnerable_again": "Эндер-дракон снова стал неуязвимым"
+  "text.qizdmod.ender_dragon_invulnerable_again": "Эндер-дракон снова стал неуязвимым",
+  "death.attack.firework_elytra": "%1$s доигрался с пиротехникой"
 }
