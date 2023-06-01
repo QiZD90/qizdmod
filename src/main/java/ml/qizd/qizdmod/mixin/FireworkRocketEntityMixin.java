@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,12 +24,17 @@ public abstract class FireworkRocketEntityMixin {
     @Shadow private @Nullable LivingEntity shooter;
 
     @Shadow public abstract ItemStack getStack();
+    private final Random random = Random.createThreadSafe();
 
     @Inject(at = @At(value = "HEAD"), method = "explode()V")
     public void makeBlankRocketsDoDamageToElytraUser(CallbackInfo info) {
         if (shooter == null)
             return;
 
-        shooter.damage(new FireworkElytraDamageSource(), 9999f);
+        if (random.nextBetween(1, 5) == 5) {
+            shooter.damage(new FireworkElytraDamageSource(), 9999f);
+        } else {
+            shooter.damage(new FireworkElytraDamageSource(), 7f);
+        }
     }
 }
