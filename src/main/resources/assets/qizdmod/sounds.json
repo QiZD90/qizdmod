@@ -1,0 +1,27 @@
+{
+  "harp_c4": {
+    "sounds": [
+      "qizdmod:harp_c4"
+    ]
+  },
+  "harp_c5": {
+    "sounds": [
+      "qizdmod:harp_c5"
+    ]
+  },
+  "lute_c4": {
+    "sounds": [
+      "qizdmod:lute_c4"
+    ]
+  },
+  "lute_c5": {
+    "sounds": [
+      "qizdmod:lute_c5"
+    ]
+  },
+  "piano_c4": {
+    "sounds": [
+      "qizdmod:piano_c4"
+    ]
+  }
+}

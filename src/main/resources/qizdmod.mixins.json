@@ -9,6 +9,8 @@
     "SimpleMerchantMixin",
     "SwampGolemEntityMixin",
     "ender_dragon.EnderDragonEntityMixin",
+    "VillagerEntityMixin",
+    "WanderingTraderEntityMixin",
     "replaceenchantments.BlockMixin",
     "replaceenchantments.EnchantmentHelperMixin",
     "replaceenchantments.FishingRodItemMixin",

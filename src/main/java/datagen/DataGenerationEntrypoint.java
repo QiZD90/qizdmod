@@ -8,5 +8,6 @@ public class DataGenerationEntrypoint  implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         fabricDataGenerator.addProvider(CraftingRecipeGenerator::new);
         fabricDataGenerator.addProvider(ModelProvider::new);
+        fabricDataGenerator.addProvider(AdvancementGenerator::new);
     }
 }

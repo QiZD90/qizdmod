@@ -1,17 +1,36 @@
 {
+  "itemGroup.qizdmod.qizdmod_group": "QiZD's mod",
   "block.qizdmod.bottle_block": "Бутылка",
   "block.qizdmod.invisible_lamp": "Невидимая лампа",
   "item.qizdmod.dragon_tooth": "Зуб дракона",
   "item.qizdmod.dragon_scale": "Чешуя дракона",
+
+  "block.qizdmod.piano": "Фортепиано",
+  "item.qizdmod.lyre": "Лира",
+  "item.qizdmod.lute": "Лютня",
+
+  "item.qizdmod.lyre_body": "Корпус лиры",
+  "item.qizdmod.instrument_string": "Струна инструмента",
+
   "item.qizdmod.minecoin_1": "Бронзовая монета (1 Октарий)",
   "item.qizdmod.minecoin_8": "Железная монета (8 Октариев)",
   "item.qizdmod.minecoin_64": "Золотая монета (64 Октария)",
   "item.qizdmod.minecoin_512": "Изумрудная монета (512 Октариев)",
+
   "item.qizdmod.minecoin_4096": "Алмазная монета (4096 Октариев)",
   "enchantment.qizdmod.empty_enchantment": "Удалённое зачарование",
   "enchantment.qizdmod.intensive_training": "Интенсивная тренировка",
   "enchantment.qizdmod.smelting_pickaxe": "Пылающая кирка",
+
   "text.qizdmod.ender_dragon_vulnerable": "Эндер-дракон временно стал уязвимым",
   "text.qizdmod.ender_dragon_invulnerable_again": "Эндер-дракон снова стал неуязвимым",
-  "death.attack.firework_elytra": "%1$s доигрался с пиротехникой"
+
+  "death.attack.firework_elytra": "%1$s доигрался с пиротехникой",
+  "advancements.qizdmod.qizdmod.description": "Ваше приключение в QiZD's mod",
+
+  "advancements.qizdmod.heartstrings.title": "Струны души",
+  "advancements.qizdmod.heartstrings.description": "Получите вашу первую струну",
+
+  "advancements.qizdmod.get_lyre.title": "Лирическое отступление",
+  "advancements.qizdmod.get_lyre.description": "Раздобудьте лиру"
 }

@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:qizdmod/heartstrings",
+  "criteria": {
+    "got_lyre": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "qizdmod:lyre"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.qizdmod.get_lyre.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "qizdmod:lyre"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.qizdmod.get_lyre.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_lyre"
+    ]
+  ]
+}

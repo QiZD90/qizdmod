@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "always_false": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.qizdmod.qizdmod.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "qizdmod:invisible_lamp"
+    },
+    "show_toast": false,
+    "title": {
+      "text": "QiZD's mod"
+    }
+  },
+  "requirements": [
+    [
+      "always_false"
+    ]
+  ]
+}

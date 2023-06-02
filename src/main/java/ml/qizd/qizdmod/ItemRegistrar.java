@@ -5,6 +5,9 @@ import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.EntityType;
+import ml.qizd.qizdmod.blocks.PianoBlock;
+import ml.qizd.qizdmod.items.LuteItem;
+import ml.qizd.qizdmod.items.LyreItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -30,13 +33,46 @@ public class ItemRegistrar {
                     .fireproof()
     );
     public static final int MINECOINS_TYPES_COUNT = 5;
-    public static Item[] MINECOINS = {
+    public static final Item[] MINECOINS = {
             new Item(new Item.Settings().group(Qizdmod.ITEM_GROUP)),
             new Item(new Item.Settings().group(Qizdmod.ITEM_GROUP)),
             new Item(new Item.Settings().group(Qizdmod.ITEM_GROUP)),
             new Item(new Item.Settings().group(Qizdmod.ITEM_GROUP)),
             new Item(new Item.Settings().group(Qizdmod.ITEM_GROUP))
     };
+
+    /*public static final Item PIANO = new BlockItem(
+            PianoBlock.PIANO_BLOCK,
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .rarity(Rarity.RARE)
+                    .maxCount(1)
+    );*/
+
+    public static final Item LYRE = new LyreItem(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .rarity(Rarity.UNCOMMON)
+                    .maxCount(1)
+    );
+
+    /*public static final Item LUTE = new LuteItem(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .rarity(Rarity.UNCOMMON)
+                    .maxCount(1)
+    );*/
+
+    public static final Item LYRE_BODY = new Item(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .maxCount(1)
+    );
+
+    public static final Item INSTRUMENT_STRING = new Item(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+    );
 
     public static void register() {
         Registry.register(
@@ -69,6 +105,12 @@ public class ItemRegistrar {
                 new Identifier("qizdmod", "dragon_scale"),
                 DRAGON_SCALE
         );
+
+        //Registry.register(Registry.ITEM, new Identifier("qizdmod", "piano"), PIANO);
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre"), LYRE);
+        //Registry.register(Registry.ITEM, new Identifier("qizdmod", "lute"), LUTE);
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre_body"), LYRE_BODY);
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "instrument_string"), INSTRUMENT_STRING);
 
         // Register money
         for (int i = 0; i < MINECOINS_TYPES_COUNT; i++) {

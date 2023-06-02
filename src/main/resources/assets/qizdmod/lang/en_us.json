@@ -4,15 +4,34 @@
   "block.qizdmod.invisible_lamp": "Invisible Lamp",
   "item.qizdmod.dragon_tooth": "Dragon Tooth",
   "item.qizdmod.dragon_scale": "Dragon Scale",
+
+  "block.qizdmod.piano": "Piano",
+  "item.qizdmod.lyre": "Lyre",
+  "item.qizdmod.lute": "Lute",
+
+  "item.qizdmod.lyre_body": "Lyre Body",
+  "item.qizdmod.instrument_string": "Instrument String",
+
   "item.qizdmod.minecoin_1": "Bronze Coin (1 Octarius)",
   "item.qizdmod.minecoin_8": "Iron Coin (8 Octarii)",
   "item.qizdmod.minecoin_64": "Gold Coin (64 Octarii)",
   "item.qizdmod.minecoin_512": "Emerald Coin (512 Octarii)",
   "item.qizdmod.minecoin_4096": "Diamond Coin (4096 Octarii)",
+
   "enchantment.qizdmod.empty_enchantment": "Removed Enchantment",
   "enchantment.qizdmod.intensive_training": "Intensive Training",
   "enchantment.qizdmod.smelting_pickaxe": "Smelting Pickaxe",
+
   "text.qizdmod.ender_dragon_vulnerable": "Ender dragon became vulnerable",
   "text.qizdmod.ender_dragon_invulnerable_again": "Ender dragon became invulnerable again",
+
   "death.attack.firework_elytra": "%1$s played with fireworks"
+
+  "advancements.qizdmod.qizdmod.description": "Your adventure through QiZD's mod",
+
+  "advancements.qizdmod.heartstrings.title": "Heartstrings",
+  "advancements.qizdmod.heartstrings.description": "Acquire your first string",
+
+  "advancements.qizdmod.get_lyre.title": "Lyrical Digression",
+  "advancements.qizdmod.get_lyre.description": "Get your hands on a lyre"
 }
