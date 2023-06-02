@@ -1,6 +1,6 @@
 package datagen;
 
-import ml.qizd.qizdmod.ItemRegistrar;
+import ml.qizd.qizdmod.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -19,8 +19,8 @@ public class ModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        for (int i = 0; i < ItemRegistrar.MINECOINS_TYPES_COUNT; i++) {
-            itemModelGenerator.register(ItemRegistrar.MINECOINS[i], Models.GENERATED);
+        for (int i = 0; i < ModItems.MINECOINS_TYPES_COUNT; i++) {
+            itemModelGenerator.register(ModItems.MINECOINS[i], Models.GENERATED);
         }
     }
 }

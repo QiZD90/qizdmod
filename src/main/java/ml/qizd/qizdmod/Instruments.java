@@ -27,7 +27,7 @@ public class Instruments {
             world.playSound(
                     player,
                     player.getBlockPos(),
-                    Qizdmod.HARP_NOTE_C4,
+                    ModSounds.HARP_NOTE_C4,
                     SoundCategory.AMBIENT,
                     1f,
                     MusicNote.ratio(note, MusicNote.C4)
@@ -36,7 +36,7 @@ public class Instruments {
             world.playSound(
                     player,
                     player.getBlockPos(),
-                    Qizdmod.HARP_NOTE_C5,
+                    ModSounds.HARP_NOTE_C5,
                     SoundCategory.AMBIENT,
                     1f,
                     MusicNote.ratio(note, MusicNote.C5)
@@ -49,7 +49,7 @@ public class Instruments {
             world.playSound(
                     player,
                     player.getBlockPos(),
-                    Qizdmod.LUTE_NOTE_C4,
+                    ModSounds.LUTE_NOTE_C4,
                     SoundCategory.AMBIENT,
                     1f,
                     MusicNote.ratio(note, MusicNote.C4)
@@ -58,7 +58,7 @@ public class Instruments {
             world.playSound(
                     player,
                     player.getBlockPos(),
-                    Qizdmod.LUTE_NOTE_C5,
+                    ModSounds.LUTE_NOTE_C5,
                     SoundCategory.AMBIENT,
                     1f,
                     MusicNote.ratio(note, MusicNote.C5)
@@ -70,7 +70,7 @@ public class Instruments {
         world.playSound(
                 player,
                 player.getBlockPos(),
-                Qizdmod.PIANO_NOTE_C4,
+                ModSounds.PIANO_NOTE_C4,
                 SoundCategory.AMBIENT,
                 1f,
                 MusicNote.ratio(note, MusicNote.C4)

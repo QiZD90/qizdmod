@@ -43,7 +43,7 @@ public class CustomTrades {
 
         if (data.getProfession() == VillagerProfession.CLERIC && data.getLevel() >= 3) {
             factories.add(new TradeOffers.SellItemFactory(
-                    new ItemStack(ItemRegistrar.LYRE),
+                    new ItemStack(ModItems.LYRE),
                     64,
                     1,
                     1,
@@ -58,7 +58,7 @@ public class CustomTrades {
     public static List<TradeOffers.Factory> getCustomTradesForWanderingTrader(WanderingTraderEntity trader) {
         ArrayList<TradeOffers.Factory> factories = new ArrayList<>();
         factories.add(new SellForDiamondsFactory(
-           new ItemStack(ItemRegistrar.LYRE_BODY),
+           new ItemStack(ModItems.LYRE_BODY),
            9,
            1,
            1,
@@ -67,7 +67,7 @@ public class CustomTrades {
         ));
 
         factories.add(new SellForDiamondsFactory(
-                new ItemStack(ItemRegistrar.INSTRUMENT_STRING),
+                new ItemStack(ModItems.INSTRUMENT_STRING),
                 3,
                 1,
                 3,

@@ -2,11 +2,8 @@ package ml.qizd.qizdmod;
 
 import ml.qizd.qizdmod.blocks.BottleBlock;
 import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.EntityType;
-import ml.qizd.qizdmod.blocks.PianoBlock;
-import ml.qizd.qizdmod.items.LuteItem;
 import ml.qizd.qizdmod.items.LyreItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -18,7 +15,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
-public class ItemRegistrar {
+public class ModItems {
     private static final Identifier ENDER_DRAGON_LOOT_TABLE = EntityType.ENDER_DRAGON.getLootTableId();
     public static final Item DRAGON_TOOTH = new Item(
             new Item.Settings()

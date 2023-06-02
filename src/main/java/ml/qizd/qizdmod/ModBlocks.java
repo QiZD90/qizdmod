@@ -6,7 +6,7 @@ import ml.qizd.qizdmod.blocks.PianoBlock;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class BlocksRegistrar {
+public class ModBlocks {
     public static void register() {
         Registry.register(
                 Registry.BLOCK,

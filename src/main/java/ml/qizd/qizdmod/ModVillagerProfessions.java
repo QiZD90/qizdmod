@@ -1,14 +1,6 @@
 package ml.qizd.qizdmod;
 
-import com.google.common.collect.ImmutableSet;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.village.VillagerProfession;
-import net.minecraft.world.poi.PointOfInterestType;
-import net.minecraft.world.poi.PointOfInterestTypes;
-
-public class VillagerRegistrar {
+public class ModVillagerProfessions {
     /*public static VillagerProfession LUTHIER = new VillagerProfession(
             "qizdmod:luthier",
             PointOfInterestType.NONE,
