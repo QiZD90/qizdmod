@@ -17,6 +17,7 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import software.bernie.example.GeckoLibMod;
 
 public class Qizdmod implements ModInitializer {
     public static String MOD_ID = "qizdmod";
@@ -27,6 +28,9 @@ public class Qizdmod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        GeckoLibMod.DISABLE_IN_DEV = true;
+        System.setProperty("geckolib.disable_examples", "true");
+
         BlocksRegistrar.register();
         ItemRegistrar.register();
 
