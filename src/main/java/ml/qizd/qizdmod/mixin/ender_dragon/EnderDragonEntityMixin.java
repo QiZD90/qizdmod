@@ -120,7 +120,7 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
 
         if (fight.getAliveEndCrystals() == 0) {
             setTicksUntilInvulnerability(TICKS_OF_VULNERABILITY);
-            System.out.println(fight);
+            //System.out.println(fight);
             tryToBroadcast("text.qizdmod.ender_dragon_vulnerable");
         }
     }
