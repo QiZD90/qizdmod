@@ -10,7 +10,9 @@ import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonFight;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -31,9 +33,7 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -43,10 +43,11 @@ import java.util.List;
 public abstract class EnderDragonEntityMixin extends MobEntity {
     @Shadow @Final private @Nullable EnderDragonFight fight;
     private static final float DRAGON_MAX_HP = 1000f;
-    private static final float HEAL_FROM_CRYSTALS = 0.5f;
+    private static final float HEAL_FROM_CRYSTALS = 0.2f;
     private static final int TICKS_OF_VULNERABILITY = 20 * 60;
 
-    private static TrackedData<Integer> TICKS_UNTIL_INVULNERABILITY;
+    private static TrackedData<Integer> TICKS_UNTIL_INVULNERABILITY
+            = DataTracker.registerData(EnderDragonEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
     protected EnderDragonEntityMixin(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
@@ -74,12 +75,14 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
 
     @Inject(at= @At("TAIL"), method = "readCustomDataFromNbt")
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
-        nbt.putInt("TicksUntilInulnerability", getTicksUntilInvulnerability());
+        this.setTicksUntilInvulnerability(nbt.getInt("TicksUntilInvulnerability"));
+        //System.out.printf("got %d into nbt; %d\n", nbt.getInt("TicksUntilInvulnerability"), getTicksUntilInvulnerability());
     }
 
     @Inject(at= @At("TAIL"), method = "writeCustomDataToNbt")
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
-        this.setTicksUntilInvulnerability(nbt.getInt("TicksUntilInvulnerability"));
+        nbt.putInt("TicksUntilInvulnerability", getTicksUntilInvulnerability());
+        //System.out.printf("put %d into nbt\n", getTicksUntilInvulnerability());
     }
 
     @Inject(at = @At("HEAD"), method = "tickMovement")
@@ -92,6 +95,11 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
                 this.tryToRespawnCrystals();
             }
         }
+    }
+
+    @ModifyConstant(constant = @Constant(floatValue = 10.0f), method = "damageLivingEntities")
+    private float damageAmount(float constant) {
+        return 20.0f;
     }
 
     @Inject(at = @At("TAIL"), method = "crystalDestroyed")
@@ -121,7 +129,7 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
         if (source.isExplosive())
             return true;
 
-        //System.out.printf("isInvulnerableTo fucn; ticks: %d\n", ticksUntilInvulnerability);
+        //System.out.printf("isInvulnerableTo func; ticks: %d\n", getTicksUntilInvulnerability());
 
         if (this.getTicksUntilInvulnerability() == -1)
             return true;
