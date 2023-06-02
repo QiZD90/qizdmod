@@ -9,14 +9,14 @@ import net.minecraft.world.poi.PointOfInterestType;
 import net.minecraft.world.poi.PointOfInterestTypes;
 
 public class VillagerRegistrar {
-    public static VillagerProfession LUTHIER = new VillagerProfession(
+    /*public static VillagerProfession LUTHIER = new VillagerProfession(
             "qizdmod:luthier",
             PointOfInterestType.NONE,
             PointOfInterestType.NONE,
             ImmutableSet.of(),
             ImmutableSet.of(),
-            SoundEvents.ENTITY_VILLAGER_WORK_TOOLSMITH);
+            SoundEvents.ENTITY_VILLAGER_WORK_TOOLSMITH);*/
     public static void register() {
-        LUTHIER = Registry.register(Registry.VILLAGER_PROFESSION,new Identifier("qizdmod", "luthier"), LUTHIER);
+        //LUTHIER = Registry.register(Registry.VILLAGER_PROFESSION,new Identifier("qizdmod", "luthier"), LUTHIER);
     }
 }

@@ -7,11 +7,12 @@
     "FireworkRocketEntityMixin",
     "MerchantEntityMixin",
     "SimpleMerchantMixin",
+    "VillagerEntityMixin",
+    "WanderingTraderEntityMixin",
     "replaceenchantments.BlockMixin",
     "replaceenchantments.EnchantmentHelperMixin",
     "replaceenchantments.FishingRodItemMixin",
-    "replaceenchantments.SimpleRegistryMixin",
-    "VillagerEntityMixin"
+    "replaceenchantments.SimpleRegistryMixin"
   ],
   "client": [
   ],

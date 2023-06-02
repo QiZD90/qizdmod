@@ -21,13 +21,13 @@ public class ItemRegistrar {
             new Item(new Item.Settings().group(Qizdmod.ITEM_GROUP))
     };
 
-    public static final Item PIANO = new BlockItem(
+    /*public static final Item PIANO = new BlockItem(
             PianoBlock.PIANO_BLOCK,
             new Item.Settings()
                     .group(Qizdmod.ITEM_GROUP)
                     .rarity(Rarity.RARE)
                     .maxCount(1)
-    );
+    );*/
 
     public static final Item LYRE = new LyreItem(
             new Item.Settings()
@@ -36,11 +36,22 @@ public class ItemRegistrar {
                     .maxCount(1)
     );
 
-    public static final Item LUTE = new LuteItem(
+    /*public static final Item LUTE = new LuteItem(
             new Item.Settings()
                     .group(Qizdmod.ITEM_GROUP)
                     .rarity(Rarity.UNCOMMON)
                     .maxCount(1)
+    );*/
+
+    public static final Item LYRE_BODY = new Item(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .maxCount(1)
+    );
+
+    public static final Item INSTRUMENT_STRING = new Item(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
     );
 
     public static void register() {
@@ -63,9 +74,11 @@ public class ItemRegistrar {
                 )
         );
 
-        Registry.register(Registry.ITEM, new Identifier("qizdmod", "piano"), PIANO);
+        //Registry.register(Registry.ITEM, new Identifier("qizdmod", "piano"), PIANO);
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre"), LYRE);
-        Registry.register(Registry.ITEM, new Identifier("qizdmod", "lute"), LUTE);
+        //Registry.register(Registry.ITEM, new Identifier("qizdmod", "lute"), LUTE);
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre_body"), LYRE_BODY);
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "instrument_string"), INSTRUMENT_STRING);
 
         // Register money
         for (int i = 0; i < MINECOINS_TYPES_COUNT; i++) {

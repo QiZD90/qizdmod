@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:qizdmod/root",
+  "criteria": {
+    "got_string": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "qizdmod:instrument_string"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.qizdmod.heartstrings.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "qizdmod:instrument_string"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.qizdmod.heartstrings.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_string"
+    ]
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "qizdmod:lyre_body"
+    },
+    {
+      "item": "qizdmod:instrument_string"
+    },
+    {
+      "item": "qizdmod:instrument_string"
+    },
+    {
+      "item": "qizdmod:instrument_string"
+    },
+    {
+      "item": "qizdmod:instrument_string"
+    },
+    {
+      "item": "qizdmod:instrument_string"
+    },
+    {
+      "item": "qizdmod:instrument_string"
+    }
+  ],
+  "result": {
+    "item": "qizdmod:lyre",
+    "count": 1
+  }
+}

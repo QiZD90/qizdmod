@@ -10,5 +10,6 @@ public class DataGenerationEntrypoint  implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         fabricDataGenerator.addProvider(CraftingRecipeGenerator::new);
+        fabricDataGenerator.addProvider(AdvancementGenerator::new);
     }
 }
