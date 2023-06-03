@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.custom_trades;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import ml.qizd.qizdmod.CustomTrades;

@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.no_curing_discounts;
 
 import ml.qizd.qizdmod.CustomTrades;
 import net.minecraft.village.SimpleMerchant;

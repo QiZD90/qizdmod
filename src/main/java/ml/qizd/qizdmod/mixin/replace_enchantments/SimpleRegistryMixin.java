@@ -1,7 +1,6 @@
-package ml.qizd.qizdmod.mixin.replaceenchantments;
+package ml.qizd.qizdmod.mixin.replace_enchantments;
 
 import ml.qizd.qizdmod.ReplacedEnchantments;
-import ml.qizd.qizdmod.enchantment.EmptyEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;

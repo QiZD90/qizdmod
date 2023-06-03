@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.swamp_golem_fix;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;

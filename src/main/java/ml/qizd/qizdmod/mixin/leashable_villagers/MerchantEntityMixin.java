@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.leashable_villagers;
 
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.player.PlayerEntity;

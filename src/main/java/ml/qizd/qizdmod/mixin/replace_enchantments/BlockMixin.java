@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin.replaceenchantments;
+package ml.qizd.qizdmod.mixin.replace_enchantments;
 
 import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
 import net.minecraft.block.Block;
@@ -11,14 +11,11 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.SmeltingRecipe;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Pair;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.DynamicRegistryManager;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.LinkedList;

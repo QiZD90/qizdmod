@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.fireworks_kill_players;
 
 import ml.qizd.qizdmod.FireworkElytraDamageSource;
 import net.minecraft.entity.Entity;

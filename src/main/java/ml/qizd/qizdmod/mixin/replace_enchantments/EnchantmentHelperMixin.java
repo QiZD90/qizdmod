@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin.replaceenchantments;
+package ml.qizd.qizdmod.mixin.replace_enchantments;
 
 import ml.qizd.qizdmod.ReplacedEnchantments;
 import net.minecraft.enchantment.Enchantment;

@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.fox_custom_textures;
 
 import net.minecraft.client.render.entity.FoxEntityRenderer;
 import net.minecraft.entity.passive.FoxEntity;

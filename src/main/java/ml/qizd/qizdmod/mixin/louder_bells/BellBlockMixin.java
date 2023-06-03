@@ -1,4 +1,4 @@
-package ml.qizd.qizdmod.mixin;
+package ml.qizd.qizdmod.mixin.louder_bells;
 
 import ml.qizd.qizdmod.ModSounds;
 import net.minecraft.block.BellBlock;
