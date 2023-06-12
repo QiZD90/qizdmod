@@ -32,22 +32,9 @@ public class Qizdmod implements ModInitializer {
         ModBlocks.register();
         ModItems.register();
         ModSounds.register();
+        ModEntities.register();
         ModVillagerProfessions.register();
-
-        Registry.register(
-                Registry.ENCHANTMENT,
-                new Identifier("qizdmod", "empty_enchantment"),
-                EmptyEnchantment.EMPTY_ENCHANTMENT);
-
-        Registry.register(
-                Registry.ENCHANTMENT,
-                new Identifier("qizdmod", "intensive_training"),
-                IntensiveTrainingEnchantment.INTENSIVE_TRAINING);
-
-        Registry.register(
-                Registry.ENCHANTMENT,
-                new Identifier("qizdmod", "smelting_pickaxe"),
-                SmeltingPickaxeEnchantment.SMELTING_PICKAXE);
+        ModEnchantments.register();
 
         ServerPlayNetworking.registerGlobalReceiver(Qizdmod.PLAYED_NOTE, (server, player, handler, buf, responseSender) -> {
             Instruments.Type type = buf.readEnumConstant(Instruments.Type.class);
