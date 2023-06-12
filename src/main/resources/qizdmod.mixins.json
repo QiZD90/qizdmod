@@ -4,18 +4,19 @@
   "package": "ml.qizd.qizdmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "louder_bells.BellBlockMixin",
-    "fireworks_kill_players.FireworkRocketEntityMixin",
-    "leashable_villagers.MerchantEntityMixin",
-    "no_curing_discounts.SimpleMerchantMixin",
-    "swamp_golem_fix.SwampGolemEntityMixin",
+    "armor_stands_arms.ArmorStandEntityMixin",
     "custom_trades.VillagerEntityMixin",
     "custom_trades.WanderingTraderEntityMixin",
     "ender_dragon.EnderDragonEntityMixin",
+    "fireworks_kill_players.FireworkRocketEntityMixin",
+    "leashable_villagers.MerchantEntityMixin",
+    "louder_bells.BellBlockMixin",
+    "no_curing_discounts.SimpleMerchantMixin",
     "replace_enchantments.BlockMixin",
     "replace_enchantments.EnchantmentHelperMixin",
     "replace_enchantments.FishingRodItemMixin",
-    "replace_enchantments.SimpleRegistryMixin"
+    "replace_enchantments.SimpleRegistryMixin",
+    "swamp_golem_fix.SwampGolemEntityMixin"
   ],
   "client": [
     "fox_custom_textures.FoxEntityRendererMixin"
