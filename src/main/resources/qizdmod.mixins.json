@@ -9,6 +9,7 @@
     "custom_trades.WanderingTraderEntityMixin",
     "ender_dragon.EnderDragonEntityMixin",
     "fireworks_kill_players.FireworkRocketEntityMixin",
+    "invisible_item_frames.ItemFrameEntityMixin",
     "leashable_villagers.MerchantEntityMixin",
     "louder_bells.BellBlockMixin",
     "no_curing_discounts.SimpleMerchantMixin",
