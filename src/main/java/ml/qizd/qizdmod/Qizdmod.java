@@ -29,6 +29,7 @@ public class Qizdmod implements ModInitializer {
         GeckoLibMod.DISABLE_IN_DEV = true;
         System.setProperty("geckolib.disable_examples", "true");
 
+        ModTrackedDataHandlers.register();
         ModBlocks.register();
         ModItems.register();
         ModSounds.register();
