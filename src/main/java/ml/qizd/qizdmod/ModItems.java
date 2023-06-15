@@ -2,6 +2,7 @@ package ml.qizd.qizdmod;
 
 import ml.qizd.qizdmod.blocks.BottleBlock;
 import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
+import ml.qizd.qizdmod.items.NoseItem;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.EntityType;
 import ml.qizd.qizdmod.items.LyreItem;
@@ -71,6 +72,12 @@ public class ModItems {
                     .group(Qizdmod.ITEM_GROUP)
     );
 
+    public static final Item VILLAGER_NOSE = new NoseItem(
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .maxCount(1)
+    );
+
     public static void register() {
         Registry.register(
                 Registry.ITEM, new Identifier("qizdmod", "bottle_block"),
@@ -108,6 +115,8 @@ public class ModItems {
         //Registry.register(Registry.ITEM, new Identifier("qizdmod", "lute"), LUTE);
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre_body"), LYRE_BODY);
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "instrument_string"), INSTRUMENT_STRING);
+
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "villager_nose"), VILLAGER_NOSE);
 
         // Register money
         for (int i = 0; i < MINECOINS_TYPES_COUNT; i++) {

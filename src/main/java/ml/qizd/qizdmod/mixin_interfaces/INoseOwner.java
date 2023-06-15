@@ -35,8 +35,12 @@ public interface INoseOwner {
             nbt.put("Nose", subNbt);
         }
 
-        public static Optional<Nose> readFromNbt(NbtCompound nbt) {
-            if (!nbt.contains("Nose") || nbt.get("Nose").getType() != NbtElement.COMPOUND_TYPE)
+        public static void writeEmptyToNbt(NbtCompound nbt) {
+            nbt.put("Nose", new NbtCompound());
+        }
+
+        public static Optional<Nose> readFromNbt(@Nullable NbtCompound nbt) {
+            if (nbt == null || !nbt.contains("Nose") || nbt.get("Nose").getType() != NbtElement.COMPOUND_TYPE)
                 return Optional.of(new Nose());
 
             NbtCompound subNbt = Objects.requireNonNull((NbtCompound) nbt.get("Nose"));

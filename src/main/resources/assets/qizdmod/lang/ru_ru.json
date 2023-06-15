@@ -12,6 +12,9 @@
   "item.qizdmod.lyre_body": "Корпус лиры",
   "item.qizdmod.instrument_string": "Струна инструмента",
 
+  "item.qizdmod.villager_nose": "Нос жителя",
+  "text.villager_nose.size_in_cm": "Длина: %d (см)",
+
   "item.qizdmod.minecoin_1": "Бронзовая монета (1 Октарий)",
   "item.qizdmod.minecoin_8": "Железная монета (8 Октариев)",
   "item.qizdmod.minecoin_64": "Золотая монета (64 Октария)",
