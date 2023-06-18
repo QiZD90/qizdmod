@@ -13,9 +13,12 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class LyreItem extends Item {
-    public LyreItem(Settings settings) {
+public class InstrumentItem extends Item {
+    private final Instruments.Type type;
+
+    public InstrumentItem(Instruments.Type type, Settings settings) {
         super(settings);
+        this.type = type;
     }
 
     @Override
@@ -23,7 +26,7 @@ public class LyreItem extends Item {
         if (world.isClient()) return super.use(world, user, hand);
 
         PacketByteBuf buf = PacketByteBufs.create();
-        buf.writeEnumConstant(Instruments.Type.Lyre);
+        buf.writeEnumConstant(type);
 
         ServerPlayNetworking.send((ServerPlayerEntity) user, Qizdmod.STARTED_PLAYING, buf);
         return TypedActionResult.pass(user.getStackInHand(hand));

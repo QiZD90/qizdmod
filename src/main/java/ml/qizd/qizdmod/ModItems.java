@@ -1,8 +1,10 @@
 package ml.qizd.qizdmod;
 
+import ml.qizd.qizdmod.blocks.BottleBlock;
+import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
+import ml.qizd.qizdmod.items.InstrumentItem;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.EntityType;
-import ml.qizd.qizdmod.items.LyreItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -57,7 +59,8 @@ public class ModItems {
                     .maxCount(1)
     );*/
 
-    public static final Item LYRE = new LyreItem(
+    public static final Item LYRE = new InstrumentItem(
+            Instruments.Type.Lyre,
             new Item.Settings()
                     .group(Qizdmod.ITEM_GROUP)
                     .rarity(Rarity.UNCOMMON)
@@ -84,11 +87,8 @@ public class ModItems {
 
     public static void register() {
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "bottle_block"), BOTTLE_BLOCK);
-
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "invisible_lamp"), INVISIBLE_LAMP_BLOCK);
-
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "dragon_tooth"), DRAGON_TOOTH);
-
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "dragon_scale"), DRAGON_SCALE);
 
         //Registry.register(Registry.ITEM, new Identifier("qizdmod", "piano"), PIANO);
