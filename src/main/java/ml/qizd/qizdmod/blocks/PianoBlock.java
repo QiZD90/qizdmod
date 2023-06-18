@@ -64,9 +64,6 @@ public class PianoBlock extends HorizontalFacingBlock {
         setDefaultState(getDefaultState().with(PART, Part.LEFT));
     }
 
-    public static final PianoBlock PIANO_BLOCK = new PianoBlock();
-
-
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {

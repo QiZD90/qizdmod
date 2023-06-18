@@ -16,7 +16,7 @@ public class Qizdmod implements ModInitializer {
     public static String MOD_ID = "qizdmod";
     public static final ItemGroup ITEM_GROUP =
             FabricItemGroupBuilder.create(new Identifier("qizdmod", "qizdmod_group"))
-                    .icon(() -> new ItemStack(InvisibleLampBlock.INVISIBLE_LAMP_BLOCK))
+                    .icon(() -> new ItemStack(ModBlocks.INVISIBLE_LAMP_BLOCK))
                     .build();
 
     public static final Identifier STARTED_PLAYING = new Identifier("qizdmod", "started_playing_instrument");

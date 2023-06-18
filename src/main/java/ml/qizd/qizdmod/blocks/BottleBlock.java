@@ -29,7 +29,6 @@ import java.util.Map;
 
 public class BottleBlock extends Block {
     public static final IntProperty COUNT = IntProperty.of("count", 1, 3);
-    public static final BottleBlock BOTTLE_BLOCK = new BottleBlock();
 
     public BottleBlock() {
         super(FabricBlockSettings

@@ -1,5 +1,6 @@
 package datagen;
 
+import ml.qizd.qizdmod.ModBlocks;
 import ml.qizd.qizdmod.ModItems;
 import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -22,7 +23,7 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
     public void generateAdvancement(Consumer<Advancement> consumer) {
         Advancement root = Advancement.Builder.create()
                 .display(
-                        InvisibleLampBlock.INVISIBLE_LAMP_BLOCK, // The display icon
+                        ModBlocks.INVISIBLE_LAMP_BLOCK, // The display icon
                         Text.literal("QiZD's mod"), // The title
                         Text.translatable("advancements.qizdmod.qizdmod.description"), // The description
                         new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used

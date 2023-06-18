@@ -1,6 +1,7 @@
 package ml.qizd.qizdmod.client;
 
 import ml.qizd.qizdmod.Instruments;
+import ml.qizd.qizdmod.ModBlocks;
 import ml.qizd.qizdmod.Qizdmod;
 import ml.qizd.qizdmod.blocks.BottleBlock;
 import ml.qizd.qizdmod.blocks.PianoBlock;
@@ -17,8 +18,8 @@ import net.minecraft.client.render.RenderLayer;
 public class QizdmodClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(BottleBlock.BOTTLE_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putBlock(PianoBlock.PIANO_BLOCK, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BOTTLE_BLOCK, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PIANO_BLOCK, RenderLayer.getCutoutMipped());
 
         ClientPlayNetworking.registerGlobalReceiver(Qizdmod.STARTED_PLAYING, (client, handler, buf, responseSender) -> {
             Instruments.Type type = buf.readEnumConstant(Instruments.Type.class);

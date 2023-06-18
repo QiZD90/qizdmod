@@ -8,7 +8,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class InvisibleLampBlock extends Block {
-    public static InvisibleLampBlock INVISIBLE_LAMP_BLOCK = new InvisibleLampBlock();
     public InvisibleLampBlock() {
         super(
                 FabricBlockSettings.of(Material.GLASS)

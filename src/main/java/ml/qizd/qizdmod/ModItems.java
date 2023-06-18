@@ -1,7 +1,5 @@
 package ml.qizd.qizdmod;
 
-import ml.qizd.qizdmod.blocks.BottleBlock;
-import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.EntityType;
 import ml.qizd.qizdmod.items.LyreItem;
@@ -17,6 +15,19 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItems {
     private static final Identifier ENDER_DRAGON_LOOT_TABLE = EntityType.ENDER_DRAGON.getLootTableId();
+
+    public static final Item BOTTLE_BLOCK = new BlockItem(ModBlocks.BOTTLE_BLOCK,
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+                    .maxCount(16)
+    );
+
+    public static final Item INVISIBLE_LAMP_BLOCK = new BlockItem(
+            ModBlocks.INVISIBLE_LAMP_BLOCK,
+            new Item.Settings()
+                    .group(Qizdmod.ITEM_GROUP)
+    );
+
     public static final Item DRAGON_TOOTH = new Item(
             new Item.Settings()
                     .group(Qizdmod.ITEM_GROUP)
@@ -72,36 +83,13 @@ public class ModItems {
     );
 
     public static void register() {
-        Registry.register(
-                Registry.ITEM, new Identifier("qizdmod", "bottle_block"),
-                new BlockItem(BottleBlock.BOTTLE_BLOCK,
-                        new Item.Settings()
-                                .group(Qizdmod.ITEM_GROUP)
-                                .maxCount(16)
-                )
-        );
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "bottle_block"), BOTTLE_BLOCK);
 
-        Registry.register(
-                Registry.ITEM,
-                new Identifier("qizdmod", "invisible_lamp"),
-                new BlockItem(
-                        InvisibleLampBlock.INVISIBLE_LAMP_BLOCK,
-                        new Item.Settings()
-                                .group(Qizdmod.ITEM_GROUP)
-                )
-        );
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "invisible_lamp"), INVISIBLE_LAMP_BLOCK);
 
-        Registry.register(
-                Registry.ITEM,
-                new Identifier("qizdmod", "dragon_tooth"),
-                DRAGON_TOOTH
-        );
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "dragon_tooth"), DRAGON_TOOTH);
 
-        Registry.register(
-                Registry.ITEM,
-                new Identifier("qizdmod", "dragon_scale"),
-                DRAGON_SCALE
-        );
+        Registry.register(Registry.ITEM, new Identifier("qizdmod", "dragon_scale"), DRAGON_SCALE);
 
         //Registry.register(Registry.ITEM, new Identifier("qizdmod", "piano"), PIANO);
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre"), LYRE);
@@ -109,13 +97,9 @@ public class ModItems {
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "lyre_body"), LYRE_BODY);
         Registry.register(Registry.ITEM, new Identifier("qizdmod", "instrument_string"), INSTRUMENT_STRING);
 
-        // Register money
         for (int i = 0; i < MINECOINS_TYPES_COUNT; i++) {
-            Registry.register(
-                    Registry.ITEM,
-                    new Identifier("qizdmod", String.format("minecoin_%d", (int) Math.pow(8, i))),
-                    MINECOINS[i]
-            );
+            Identifier id = new Identifier("qizdmod", String.format("minecoin_%d", (int) Math.pow(8, i)));
+            Registry.register(Registry.ITEM, id, MINECOINS[i]);
         }
 
         modifyLootTables();
