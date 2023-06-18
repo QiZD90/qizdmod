@@ -1,16 +1,11 @@
 package ml.qizd.qizdmod;
 
-import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
-import ml.qizd.qizdmod.enchantment.EmptyEnchantment;
-import ml.qizd.qizdmod.enchantment.IntensiveTrainingEnchantment;
-import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class Qizdmod implements ModInitializer {
     public static String MOD_ID = "qizdmod";

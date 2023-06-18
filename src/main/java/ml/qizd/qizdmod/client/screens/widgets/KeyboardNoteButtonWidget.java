@@ -18,7 +18,9 @@ public class KeyboardNoteButtonWidget extends InstrumentNoteButtonWidget {
     public Type type;
     @Nullable
     public List<KeyboardNoteButtonWidget> overlapping;
-    public KeyboardNoteButtonWidget(int x, int y, int width, int height, String label, Type type, List<KeyboardNoteButtonWidget> overlapping, OnClickCallback callback) {
+    public KeyboardNoteButtonWidget(int x, int y, int width, int height,
+                                    String label, Type type,
+                                    @Nullable List<KeyboardNoteButtonWidget> overlapping, OnClickCallback callback) {
         super(x, y, width, height, label, callback);
         this.type = type;
         this.overlapping = overlapping;

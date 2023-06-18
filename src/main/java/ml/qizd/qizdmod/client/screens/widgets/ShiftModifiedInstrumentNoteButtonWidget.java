@@ -10,7 +10,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 
 public class ShiftModifiedInstrumentNoteButtonWidget extends InstrumentNoteButtonWidget {
-    private static Text shiftText = Text.of("⇧");
+    private static final Text shiftText = Text.of("⇧");
 
     public ShiftModifiedInstrumentNoteButtonWidget(int x, int y, int width, int height, String label, OnClickCallback callback) {
         super(x, y, width, height, label, callback);

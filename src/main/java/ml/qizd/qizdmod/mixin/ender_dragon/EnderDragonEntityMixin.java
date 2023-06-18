@@ -1,12 +1,9 @@
 package ml.qizd.qizdmod.mixin.ender_dragon;
 
 import com.google.common.collect.ImmutableList;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.boss.BossBar;
-import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonFight;
 import net.minecraft.entity.damage.DamageSource;
@@ -27,11 +24,9 @@ import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.gen.feature.EndSpikeFeature;
 import net.minecraft.world.gen.feature.EndSpikeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import org.apache.logging.log4j.core.jmx.Server;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -46,8 +41,8 @@ public abstract class EnderDragonEntityMixin extends MobEntity {
     private static final float HEAL_FROM_CRYSTALS = 0.2f;
     private static final int TICKS_OF_VULNERABILITY = 20 * 60;
 
-    private static TrackedData<Integer> TICKS_UNTIL_INVULNERABILITY
-            = DataTracker.registerData(EnderDragonEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    private static final TrackedData<Integer> TICKS_UNTIL_INVULNERABILITY
+            = DataTracker.registerData(EnderDragonEntityMixin.class, TrackedDataHandlerRegistry.INTEGER);
 
     protected EnderDragonEntityMixin(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);

@@ -5,10 +5,8 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
 public class SmeltingPickaxeEnchantment extends Enchantment {
-    public static final Enchantment SMELTING_PICKAXE = new SmeltingPickaxeEnchantment();
-
-    private static EquipmentSlot[] slots = {EquipmentSlot.MAINHAND};
-    protected SmeltingPickaxeEnchantment() {
+    private static final EquipmentSlot[] slots = { EquipmentSlot.MAINHAND };
+    public SmeltingPickaxeEnchantment() {
         super(Rarity.RARE, EnchantmentTarget.DIGGER, slots);
     }
 }

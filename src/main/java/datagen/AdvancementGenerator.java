@@ -2,7 +2,6 @@ package datagen;
 
 import ml.qizd.qizdmod.ModBlocks;
 import ml.qizd.qizdmod.ModItems;
-import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;

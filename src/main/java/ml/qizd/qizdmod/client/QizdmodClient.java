@@ -3,8 +3,6 @@ package ml.qizd.qizdmod.client;
 import ml.qizd.qizdmod.Instruments;
 import ml.qizd.qizdmod.ModBlocks;
 import ml.qizd.qizdmod.Qizdmod;
-import ml.qizd.qizdmod.blocks.BottleBlock;
-import ml.qizd.qizdmod.blocks.PianoBlock;
 import ml.qizd.qizdmod.client.screens.LutePlayingScreen;
 import ml.qizd.qizdmod.client.screens.LyrePlayingScreen;
 import ml.qizd.qizdmod.client.screens.PianoPlayingScreen;

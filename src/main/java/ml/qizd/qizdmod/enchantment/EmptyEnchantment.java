@@ -5,12 +5,10 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 
 public class EmptyEnchantment extends Enchantment {
-    public static Enchantment EMPTY_ENCHANTMENT = new EmptyEnchantment();
     private static final EquipmentSlot[] slots = {};
-    protected EmptyEnchantment() {
+    public EmptyEnchantment() {
         super(Rarity.COMMON, EnchantmentTarget.TRIDENT, slots);
     }
-
 
     public boolean isAvailableForEnchantedBookOffer() {
         return false;

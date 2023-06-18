@@ -1,6 +1,6 @@
 package ml.qizd.qizdmod.mixin.replace_enchantments;
 
-import ml.qizd.qizdmod.enchantment.IntensiveTrainingEnchantment;
+import ml.qizd.qizdmod.ModEnchantments;
 import ml.qizd.qizdmod.entity.ModifiedFishingBobberEntity;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -32,7 +32,7 @@ public abstract class FishingRodItemMixin {
         ItemStack itemStack = user.getStackInHand(Hand.MAIN_HAND);
         int lureLevel = EnchantmentHelper.getLure(itemStack);
         Map<Enchantment, Integer> enchants = EnchantmentHelper.get(itemStack);
-        int intensiveTrainingLevel = enchants.getOrDefault(IntensiveTrainingEnchantment.INTENSIVE_TRAINING, 0);
+        int intensiveTrainingLevel = enchants.getOrDefault(ModEnchantments.INTENSIVE_TRAINING, 0);
         return world.spawnEntity(new ModifiedFishingBobberEntity(user, world, lureLevel, intensiveTrainingLevel));
     }
 }
