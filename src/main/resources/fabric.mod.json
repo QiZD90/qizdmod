@@ -28,7 +28,6 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "wetlands": "1.0.2",
     "minecraft": "${minecraft_version}"
   }
 }

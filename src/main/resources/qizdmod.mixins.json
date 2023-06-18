@@ -17,8 +17,7 @@
     "replace_enchantments.BlockMixin",
     "replace_enchantments.EnchantmentHelperMixin",
     "replace_enchantments.FishingRodItemMixin",
-    "replace_enchantments.SimpleRegistryMixin",
-    "swamp_golem_fix.SwampGolemEntityMixin"
+    "replace_enchantments.SimpleRegistryMixin"
   ],
   "client": [
     "fox_custom_textures.FoxEntityRendererMixin"
