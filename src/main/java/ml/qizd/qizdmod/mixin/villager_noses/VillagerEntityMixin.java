@@ -2,6 +2,7 @@ package ml.qizd.qizdmod.mixin.villager_noses;
 
 import ml.qizd.qizdmod.ModItems;
 import ml.qizd.qizdmod.ModTrackedDataHandlers;
+import ml.qizd.qizdmod.Qizdmod;
 import ml.qizd.qizdmod.items.NoseItem;
 import ml.qizd.qizdmod.mixin_interfaces.INoseOwner;
 import net.minecraft.block.Block;
@@ -17,6 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -73,6 +75,7 @@ public abstract class VillagerEntityMixin extends MerchantEntity implements INos
             player.world.playSound(
                     null, player.getBlockPos(), SoundEvents.ENTITY_SHEEP_SHEAR, SoundCategory.AMBIENT,
                     1.0f,1.0f);
+            Qizdmod.SHEARED_VILLAGER_NOSE.trigger((ServerPlayerEntity) player);
             cir.setReturnValue(ActionResult.SUCCESS);
         } else if (!this.hasNose() && stack.isOf(ModItems.VILLAGER_NOSE)) {
             setNose(Nose.readFromNbt(stack.getNbt()));

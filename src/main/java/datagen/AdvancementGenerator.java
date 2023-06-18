@@ -1,7 +1,9 @@
 package datagen;
 
 import ml.qizd.qizdmod.ModItems;
+import ml.qizd.qizdmod.Qizdmod;
 import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
+import ml.qizd.qizdmod.criterions.ShearedVillagerNoseCriterion;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
@@ -33,6 +35,21 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 )
                 .criterion("always_false", new ImpossibleCriterion.Conditions())
                 .build(consumer, "qizdmod" + "/root");
+
+        Advancement gotYourNose = Advancement.Builder.create()
+                .display(
+                        ModItems.VILLAGER_NOSE, // The display icon
+                        Text.literal("advancements.qizdmod.got_your_nose.title"), // The title
+                        Text.translatable("advancements.qizdmod.got_your_nose.description"), // The description
+                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .criterion("sheared_villager_nose", new ShearedVillagerNoseCriterion.Condition())
+                .parent(root)
+                .build(consumer, "qizdmod" + "/got_your_nose");
 
         Advancement heartstrings = Advancement.Builder.create()
                 .display(

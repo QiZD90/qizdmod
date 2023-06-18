@@ -30,7 +30,10 @@ public class NoseItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        NbtCompound nose = stack.getSubNbt("Nose");
+        // I had to resort to this hack since there is no method to set the default nbt
+        NbtCompound nose = stack.getOrCreateSubNbt("Nose");
+        if (!nose.contains("SizeInCm"))
+            nose.putInt("SizeInCm", 15);
         tooltip.add(Text.translatable("text.villager_nose.size_in_cm", nose.getInt("SizeInCm")));
     }
 
