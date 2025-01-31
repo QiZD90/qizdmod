@@ -40,18 +40,6 @@ public class CustomTrades {
     }
     public static List<TradeOffers.Factory> getCustomTradesForVillager(VillagerData data) {
         ArrayList<TradeOffers.Factory> factories = new ArrayList<>();
-
-        if (data.getProfession() == VillagerProfession.CLERIC && data.getLevel() >= 3) {
-            factories.add(new TradeOffers.SellItemFactory(
-                    new ItemStack(ModItems.LYRE),
-                    64,
-                    1,
-                    1,
-                    5,
-                    0.05f
-            ));
-        }
-
         return factories;
     }
 

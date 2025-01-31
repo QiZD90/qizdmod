@@ -9,12 +9,11 @@ import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.MathHelper;
 
 public class InstrumentNoteButtonWidget extends ClickableWidget {
     protected static final Identifier TEXTURE = new Identifier("minecraft", "textures/gui/container/dispenser.png");
-    public static interface OnClickCallback {
-        public void onClick();
+    public interface OnClickCallback {
+        void onClick();
     }
 
     private OnClickCallback callback;
@@ -42,11 +41,9 @@ public class InstrumentNoteButtonWidget extends ClickableWidget {
                     return true;
                 }
             }
-
-            return false;
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     public void click() {

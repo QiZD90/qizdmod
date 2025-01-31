@@ -7,6 +7,7 @@
     "armor_stands_arms.ArmorStandEntityMixin",
     "custom_trades.VillagerEntityMixin",
     "custom_trades.WanderingTraderEntityMixin",
+    "eggs_now_stack.ItemsMixin",
     "ender_dragon.EnderDragonEntityMixin",
     "fireworks_kill_players.FireworkRocketEntityMixin",
     "invisible_item_frames.ItemFrameEntityMixin",
@@ -17,7 +18,6 @@
     "replace_enchantments.EnchantmentHelperMixin",
     "replace_enchantments.FishingRodItemMixin",
     "replace_enchantments.SimpleRegistryMixin",
-    "swamp_golem_fix.SwampGolemEntityMixin",
     "villager_noses.VillagerEntityMixin"
   ],
   "client": [

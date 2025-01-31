@@ -28,7 +28,7 @@
   "text.qizdmod.ender_dragon_vulnerable": "Ender dragon became vulnerable",
   "text.qizdmod.ender_dragon_invulnerable_again": "Ender dragon became invulnerable again",
 
-  "death.attack.firework_elytra": "%1$s played with fireworks"
+  "death.attack.firework_elytra": "%1$s played with fireworks",
 
   "advancements.qizdmod.qizdmod.description": "Your adventure through QiZD's mod",
 

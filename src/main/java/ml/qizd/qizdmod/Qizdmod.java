@@ -15,14 +15,12 @@ import net.minecraft.advancement.criterion.UsingItemCriterion;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import software.bernie.example.GeckoLibMod;
 
 public class Qizdmod implements ModInitializer {
     public static String MOD_ID = "qizdmod";
     public static final ItemGroup ITEM_GROUP =
             FabricItemGroupBuilder.create(new Identifier("qizdmod", "qizdmod_group"))
-                    .icon(() -> new ItemStack(InvisibleLampBlock.INVISIBLE_LAMP_BLOCK))
+                    .icon(() -> new ItemStack(ModBlocks.INVISIBLE_LAMP_BLOCK))
                     .build();
 
     public static final Identifier STARTED_PLAYING = new Identifier("qizdmod", "started_playing_instrument");
@@ -36,9 +34,6 @@ public class Qizdmod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        GeckoLibMod.DISABLE_IN_DEV = true;
-        System.setProperty("geckolib.disable_examples", "true");
-
         ModTrackedDataHandlers.register();
         ModBlocks.register();
         ModItems.register();

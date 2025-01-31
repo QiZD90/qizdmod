@@ -5,13 +5,13 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModSounds {
-    public static SoundEvent HARP_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "harp_c4"));
-    public static SoundEvent HARP_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "harp_c5"));
-    public static SoundEvent LUTE_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "lute_c4"));
-    public static SoundEvent LUTE_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "lute_c5"));
-    public static SoundEvent PIANO_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "piano_c4"));
+    public static final SoundEvent HARP_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "harp_c4"));
+    public static final SoundEvent HARP_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "harp_c5"));
+    public static final SoundEvent LUTE_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "lute_c4"));
+    public static final SoundEvent LUTE_NOTE_C5 = new SoundEvent(new Identifier("qizdmod", "lute_c5"));
+    public static final SoundEvent PIANO_NOTE_C4 = new SoundEvent(new Identifier("qizdmod", "piano_c4"));
 
-    public static SoundEvent BLOCK_BELL_USE
+    public static final SoundEvent BLOCK_BELL_USE
         = new SoundEvent(new Identifier("minecraft", "block.bell.use"), 256f);
 
     public static void register() {

@@ -1,6 +1,6 @@
 package ml.qizd.qizdmod.mixin.replace_enchantments;
 
-import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
+import ml.qizd.qizdmod.ModEnchantments;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -25,7 +25,7 @@ import java.util.List;
 public class BlockMixin {
     @Inject(at = @At("RETURN"), method = "getDroppedStacks(Lnet/minecraft/block/BlockState;Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/entity/BlockEntity;Lnet/minecraft/entity/Entity;Lnet/minecraft/item/ItemStack;)Ljava/util/List;", cancellable = true)
     private static void injectIntoGetDroppedStacks(BlockState state, ServerWorld world, BlockPos pos, @Nullable BlockEntity blockEntity, @Nullable Entity entity, ItemStack stack, CallbackInfoReturnable<List<ItemStack>> info) {
-        if (!EnchantmentHelper.get(stack).containsKey(SmeltingPickaxeEnchantment.SMELTING_PICKAXE))
+        if (!EnchantmentHelper.get(stack).containsKey(ModEnchantments.SMELTING_PICKAXE))
             return;
 
         List<ItemStack> drops = info.getReturnValue();

@@ -5,10 +5,8 @@ import ml.qizd.qizdmod.CustomTrades;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.passive.WanderingTraderEntity;
-import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOfferList;
 import net.minecraft.village.TradeOffers;
-import net.minecraft.village.VillagerData;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -24,7 +22,7 @@ public abstract class WanderingTraderEntityMixin extends MerchantEntity {
 
     @Override
     public void fillRecipes() {
-        Int2ObjectMap<TradeOffers.Factory[]> int2ObjectMap = TradeOffers.WANDERING_TRADER_TRADES;;
+        Int2ObjectMap<TradeOffers.Factory[]> int2ObjectMap = TradeOffers.WANDERING_TRADER_TRADES;
         TradeOffers.Factory[] factories1 = int2ObjectMap.get(1);
         TradeOffers.Factory[] factories2 = int2ObjectMap.get(2);
 

@@ -2,7 +2,6 @@ package ml.qizd.qizdmod;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Instruments {
