@@ -22,10 +22,9 @@ public abstract class SimpleRegistryMixin<T> {
 
     @Inject(method = "getId", at = @At("HEAD"), cancellable = true)
     private void injectIntoGetId(Object value, CallbackInfoReturnable<@Nullable Identifier> info) {
-        if (!(value instanceof Enchantment))
+        if (!(value instanceof Enchantment enchantment))
             return;
 
-        Enchantment enchantment = (Enchantment) value;
         if (ReplacedEnchantments.isEnchantmentReplaced(enchantment)) {
             Identifier id = Registry.ENCHANTMENT.getId(ReplacedEnchantments.getEnchantmentReplacement(enchantment));
             info.setReturnValue(id);
@@ -34,10 +33,9 @@ public abstract class SimpleRegistryMixin<T> {
 
     @Inject(method = "getRawId", at = @At("HEAD"), cancellable = true)
     private void injectIntoGetRawId(Object value, CallbackInfoReturnable<Integer> info) {
-        if (!(value instanceof Enchantment))
+        if (!(value instanceof Enchantment enchantment))
             return;
 
-        Enchantment enchantment = (Enchantment) value;
         if (ReplacedEnchantments.isEnchantmentReplaced(enchantment)) {
             info.setReturnValue(
                     Registry.ENCHANTMENT.getRawId(ReplacedEnchantments.getEnchantmentReplacement(enchantment)));

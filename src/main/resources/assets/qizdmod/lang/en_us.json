@@ -12,6 +12,9 @@
   "item.qizdmod.lyre_body": "Lyre Body",
   "item.qizdmod.instrument_string": "Instrument String",
 
+  "item.qizdmod.villager_nose": "Villager Nose",
+  "text.villager_nose.size_in_cm": "Length: %d (cm)",
+
   "item.qizdmod.minecoin_1": "Bronze Coin (1 Octarius)",
   "item.qizdmod.minecoin_8": "Iron Coin (8 Octarii)",
   "item.qizdmod.minecoin_64": "Gold Coin (64 Octarii)",
@@ -33,5 +36,8 @@
   "advancements.qizdmod.heartstrings.description": "Acquire your first string",
 
   "advancements.qizdmod.get_lyre.title": "Lyrical Digression",
-  "advancements.qizdmod.get_lyre.description": "Get your hands on a lyre"
+  "advancements.qizdmod.get_lyre.description": "Get your hands on a lyre",
+
+  "advancements.qizdmod.got_your_nose.title": "Got Your Nose!",
+  "advancements.qizdmod.got_your_nose.description": "Shear a villager's nose"
 }

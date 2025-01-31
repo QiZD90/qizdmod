@@ -17,10 +17,12 @@
     "replace_enchantments.BlockMixin",
     "replace_enchantments.EnchantmentHelperMixin",
     "replace_enchantments.FishingRodItemMixin",
-    "replace_enchantments.SimpleRegistryMixin"
+    "replace_enchantments.SimpleRegistryMixin",
+    "villager_noses.VillagerEntityMixin"
   ],
   "client": [
-    "fox_custom_textures.FoxEntityRendererMixin"
+    "fox_custom_textures.FoxEntityRendererMixin",
+    "villager_noses.VillagerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

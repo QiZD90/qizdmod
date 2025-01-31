@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:qizdmod/root",
+  "criteria": {
+    "sheared_villager_nose": {
+      "conditions": {},
+      "trigger": "qizdmod:sheared_villager_nose"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "advancements.qizdmod.got_your_nose.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "qizdmod:villager_nose"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "advancements.qizdmod.got_your_nose.title"
+    }
+  },
+  "requirements": [
+    [
+      "sheared_villager_nose"
+    ]
+  ]
+}

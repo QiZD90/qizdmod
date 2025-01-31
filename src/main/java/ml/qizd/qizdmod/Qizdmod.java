@@ -1,8 +1,10 @@
 package ml.qizd.qizdmod;
 
+import ml.qizd.qizdmod.criterions.ShearedVillagerNoseCriterion;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -17,9 +19,13 @@ public class Qizdmod implements ModInitializer {
     public static final Identifier STARTED_PLAYING = new Identifier("qizdmod", "started_playing_instrument");
     public static final Identifier PLAYED_NOTE = new Identifier("qizdmod", "played_note");
 
+    public static final ShearedVillagerNoseCriterion SHEARED_VILLAGER_NOSE
+            = Criteria.register(new ShearedVillagerNoseCriterion());
+
 
     @Override
     public void onInitialize() {
+        ModTrackedDataHandlers.register();
         ModBlocks.register();
         ModItems.register();
         ModSounds.register();

@@ -12,12 +12,15 @@
   "item.qizdmod.lyre_body": "Корпус лиры",
   "item.qizdmod.instrument_string": "Струна инструмента",
 
+  "item.qizdmod.villager_nose": "Нос жителя",
+  "text.villager_nose.size_in_cm": "Длина: %d (см)",
+
   "item.qizdmod.minecoin_1": "Бронзовая монета (1 Октарий)",
   "item.qizdmod.minecoin_8": "Железная монета (8 Октариев)",
   "item.qizdmod.minecoin_64": "Золотая монета (64 Октария)",
   "item.qizdmod.minecoin_512": "Изумрудная монета (512 Октариев)",
-
   "item.qizdmod.minecoin_4096": "Алмазная монета (4096 Октариев)",
+
   "enchantment.qizdmod.empty_enchantment": "Удалённое зачарование",
   "enchantment.qizdmod.intensive_training": "Интенсивная тренировка",
   "enchantment.qizdmod.smelting_pickaxe": "Пылающая кирка",
@@ -32,5 +35,8 @@
   "advancements.qizdmod.heartstrings.description": "Получите вашу первую струну",
 
   "advancements.qizdmod.get_lyre.title": "Лирическое отступление",
-  "advancements.qizdmod.get_lyre.description": "Раздобудьте лиру"
+  "advancements.qizdmod.get_lyre.description": "Раздобудьте лиру",
+
+  "advancements.qizdmod.got_your_nose.title": "Остаться с носом",
+  "advancements.qizdmod.got_your_nose.description": "Отрежьте нос жителю с помощью ножниц"
 }

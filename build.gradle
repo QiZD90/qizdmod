@@ -116,3 +116,7 @@ sourceSets {
         }
     }
 }
+
+tasks.withType(JavaCompile) {
+    options.fork = true
+}
