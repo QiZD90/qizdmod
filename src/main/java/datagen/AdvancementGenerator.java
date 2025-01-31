@@ -2,8 +2,6 @@ package datagen;
 
 import ml.qizd.qizdmod.ModBlocks;
 import ml.qizd.qizdmod.ModItems;
-import ml.qizd.qizdmod.Qizdmod;
-import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import ml.qizd.qizdmod.criterions.ShearedVillagerNoseCriterion;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
@@ -40,7 +38,7 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
         Advancement gotYourNose = Advancement.Builder.create()
                 .display(
                         ModItems.VILLAGER_NOSE, // The display icon
-                        Text.literal("advancements.qizdmod.got_your_nose.title"), // The title
+                        Text.translatable("advancements.qizdmod.got_your_nose.title"), // The title
                         Text.translatable("advancements.qizdmod.got_your_nose.description"), // The description
                         new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL

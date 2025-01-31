@@ -16,7 +16,7 @@ public class InstrumentNoteButtonWidget extends ClickableWidget {
         void onClick();
     }
 
-    private OnClickCallback callback;
+    private final OnClickCallback callback;
     protected Text label;
     public static int MAX_COUNTDOWN_TICKS = 20;
     public int pressedCountdownTicks = 0;

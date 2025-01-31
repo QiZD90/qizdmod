@@ -1,17 +1,10 @@
 package ml.qizd.qizdmod;
 
-import ml.qizd.qizdmod.blocks.InvisibleLampBlock;
 import ml.qizd.qizdmod.criterions.ShearedVillagerNoseCriterion;
-import ml.qizd.qizdmod.enchantment.EmptyEnchantment;
-import ml.qizd.qizdmod.enchantment.IntensiveTrainingEnchantment;
-import ml.qizd.qizdmod.enchantment.SmeltingPickaxeEnchantment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.fabricmc.fabric.api.object.builder.v1.advancement.CriterionRegistry;
 import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.advancement.criterion.ItemCriterion;
-import net.minecraft.advancement.criterion.UsingItemCriterion;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -28,8 +21,6 @@ public class Qizdmod implements ModInitializer {
 
     public static final ShearedVillagerNoseCriterion SHEARED_VILLAGER_NOSE
             = Criteria.register(new ShearedVillagerNoseCriterion());
-    /*public static final ItemCriterion REATTACHED_VILLAGER_NOSE
-            = Criteria.register(new ItemCriterion(new Identifier("qizdmod", "sheared_villager")));*/
 
 
     @Override

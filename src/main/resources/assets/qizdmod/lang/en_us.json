@@ -36,5 +36,8 @@
   "advancements.qizdmod.heartstrings.description": "Acquire your first string",
 
   "advancements.qizdmod.get_lyre.title": "Lyrical Digression",
-  "advancements.qizdmod.get_lyre.description": "Get your hands on a lyre"
+  "advancements.qizdmod.get_lyre.description": "Get your hands on a lyre",
+
+  "advancements.qizdmod.got_your_nose.title": "Got Your Nose!",
+  "advancements.qizdmod.got_your_nose.description": "Shear a villager's nose"
 }
